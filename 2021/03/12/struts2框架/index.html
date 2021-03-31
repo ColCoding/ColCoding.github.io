@@ -315,7 +315,7 @@
 </ol>
 <h3 id="3-Struts2配置文件和常量配置"><a href="#3-Struts2配置文件和常量配置" class="headerlink" title="3.Struts2配置文件和常量配置"></a>3.Struts2配置文件和常量配置</h3><p><strong>问题1：</strong>随着应用规模的增加，系统中Action的数量也会大量增加，导致struts.xml配置文件变得非常臃肿。</p>
 <p><strong>解决办法：</strong>在struts.xml中引入其他的配置文件：</p>
-<p>语法：<struts><br>                        <include file="struts-part1.xml"/><br>                        <include file="struts-part2.xml"/><br>            </struts></p>
+<p>语法：<struts><br>                        <include file="struts-part1.xml"><br>                        <include file="struts-part2.xml"><br>            </include></include></struts></p>
 <p>6大配置文件：</p>
 <p>Struts2框架按照如下顺序加载struts2配置：</p>
 <ol>
@@ -338,29 +338,29 @@
 <p>如果多个文件配置了同一个struts2 常量，则后一个文件中配置的常量值会覆盖前面文件配置的常量值。因此，一般地，我们只在struts.xml中做常量配置。</p>
 <p><strong>常间的常量配置：</strong></p>
 <ul>
-<li><p><strong>指定默认编码集,作用于HttpServletRequest的setCharacterEncoding方法 和freemarker 、velocity的输出。</strong><br>   <strong><constant name="struts.i18n.encoding" value="UTF-8"/></strong></p>
+<li><p><strong>指定默认编码集,作用于HttpServletRequest的setCharacterEncoding方法 和freemarker 、velocity的输出。</strong><br>   <strong><constant name="struts.i18n.encoding" value="UTF-8"></constant></strong></p>
 </li>
-<li><p>*<em>该属性指定需要Struts 2处理的请求后缀，该属性的默认值是action，即所有匹配</em>.action的请求都由Struts2处理。 如果用户需要指定多个请求后缀，则多个后缀之间以英文逗号（,）隔开。**<br>   <strong><constant name="struts.action.extension" value="action,,"/></strong></p>
+<li><p>*<em>该属性指定需要Struts 2处理的请求后缀，该属性的默认值是action，即所有匹配</em>.action的请求都由Struts2处理。 如果用户需要指定多个请求后缀，则多个后缀之间以英文逗号（,）隔开。**<br>   <strong><constant name="struts.action.extension" value="action,,"></constant></strong></p>
 </li>
 <li><p>设置浏览器是否缓存静态内容,默认值为true(生产环境下使用),开发阶段最好关闭 。</p>
-   <constant name="struts.serve.static.browserCache" value="false"/>
-</li>
+   <constant name="struts.serve.static.browserCache" value="false">
+</constant></li>
 <li><p>当struts的配置文件修改后,系统是否自动重新加载该文件,默认值为false(生产环境下使用),开发阶段最好打开 </p>
-   <constant name="struts.configuration.xml.reload" value="true"/>
-</li>
-<li><p><strong>开发模式下使用,这样可以打印出更详细的错误信息</strong><br>   **<constant name="struts.devMode" value="true" />:**修改struts.xml之后,不要重启Tomcat。</p>
+   <constant name="struts.configuration.xml.reload" value="true">
+</constant></li>
+<li><p><strong>开发模式下使用,这样可以打印出更详细的错误信息</strong><br>   **<constant name="struts.devMode" value="true">:**修改struts.xml之后,不要重启Tomcat。</constant></p>
 </li>
 <li><p>默认的视图主题 。</p>
-   <constant name="struts.ui.theme" value="simple" />
-</li>
+   <constant name="struts.ui.theme" value="simple">
+</constant></li>
 <li><p>是否支持动态方法调用。</p>
-   <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+   <constant name="struts.enable.DynamicMethodInvocation" value="false">
 
 
 
 
 
-</li>
+</constant></li>
 </ul>
 
     
