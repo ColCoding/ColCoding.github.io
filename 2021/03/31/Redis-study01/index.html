@@ -6,18 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021 | ColCoding小站</title>
+  <title>Redis学习之路（一） | ColCoding小站</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ColCoding小站">
-<meta property="og:url" content="http://example.com/archives/2021/index.html">
+  <meta name="description" content="声明：本文仅供个人学习研究使用！目录：1. Redis概述2. 安装和测试Redis3. redis-benchmark测试性能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis学习之路（一）">
+<meta property="og:url" content="http://example.com/2021/03/31/Redis-study01/index.html">
 <meta property="og:site_name" content="ColCoding小站">
+<meta property="og:description" content="声明：本文仅供个人学习研究使用！目录：1. Redis概述2. 安装和测试Redis3. redis-benchmark测试性能">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2021/03/31/Redis-study01/1.png">
+<meta property="og:image" content="http://example.com/2021/03/31/Redis-study01/2.png">
+<meta property="article:published_time" content="2021-03-31T06:51:59.000Z">
+<meta property="article:modified_time" content="2021-03-31T08:56:48.650Z">
 <meta property="article:author" content="ColCoding">
 <meta property="article:tag" content="ColCoding，ColCoding的博客，ColCoding的小站">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/03/31/Redis-study01/1.png">
   
     <link rel="alternative" href="/atom.xml" title="ColCoding小站" type="application/atom+xml">
   
@@ -195,243 +202,274 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Redis-study01" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/03/31/Redis%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
-        <time datetime="2021-03-31T06:51:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2021/03/31/Redis%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank">Redis学习之路（一）</a>
   
+    <h1 class="article-title" itemprop="name">
+      Redis学习之路（一）
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2021/03/31/Redis-study01/" class="archive-article-date">
         <time datetime="2021-03-31T06:51:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
 </a>
 
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">558字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="声明：本文仅供个人学习研究使用！"><a href="#声明：本文仅供个人学习研究使用！" class="headerlink" title="声明：本文仅供个人学习研究使用！"></a>声明：本文仅供个人学习研究使用！</h4><h2 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h2><h3 id="1-Redis概述"><a href="#1-Redis概述" class="headerlink" title="1. Redis概述"></a>1. Redis概述</h3><h3 id="2-安装和测试Redis"><a href="#2-安装和测试Redis" class="headerlink" title="2. 安装和测试Redis"></a>2. 安装和测试Redis</h3><h3 id="3-redis-benchmark测试性能"><a href="#3-redis-benchmark测试性能" class="headerlink" title="3. redis-benchmark测试性能"></a>3. redis-benchmark测试性能</h3><a id="more"></a>
+
+<h3 id="1-Redis概述-1"><a href="#1-Redis概述-1" class="headerlink" title="1. Redis概述"></a>1. Redis概述</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://redis.io/">Redis官网</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.redis.cn/">Redis中文网址</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.redis.cn/commands.html">查看Redis命令大全 →</a></li>
+<li><a target="_blank" rel="noopener" href="http://bbs.redis.cn/">访问Redis论坛 →</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.redis.cn/redis_memory/">Redis使用内存计算器 →</a></li>
+</ul>
+<h3 id="2-安装和测试Redis-1"><a href="#2-安装和测试Redis-1" class="headerlink" title="2. 安装和测试Redis"></a>2. 安装和测试Redis</h3><p><strong>Windows下安装步骤：</strong></p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://download.redis.io/releases">下载安装包</a></li>
+<li>解压Redis安装包到自己的安装目录下（大小只有5M）</li>
+<li>这样就安装完毕。</li>
+<li>进入解压完毕的安装目录下，开启Reidis，运行redis-server.exe文件。<strong>注意：</strong>修改redis的配置文件(redis.windows.conf)后要使用配置文件打开，这样才能按照自己的配置运行Redis服务。比如说，修改了配置中的使用密码连接服务。</li>
+<li>启动后，（默认端口：6379），运行Redis客户端连接服务，即运行redis-cli.exe文件；</li>
+<li>测试连接。运行ping命令，返回PONG，表示连接成功。</li>
+</ol>
+<p><strong>Redis推荐使用Linux进行开发。</strong></p>
+<p><strong>Linux下安装步骤：</strong></p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://download.redis.io/releases">下载安装包</a></li>
+<li>将安装包放在<code>home/XXX/opt</code>目录下，并解压。XXX位自己定义的目录。</li>
+<li>进入解压后的目录下，进行环境安装。</li>
+<li>运行 <code>yum -y install gcc-c++</code></li>
+<li>运行<code>make</code>指令</li>
+<li>运行<code>make install</code>指令</li>
+<li>redis的默认装路径<code>/usr/local/bin</code></li>
+<li>在安装目录下可以看到<code>redis-server</code>和<code>redis-cli</code>文件,创建conf目录。</li>
+<li>运行<code>cp home/XXX/opt/redis-5.0.8/redis.conf</code>文件拷贝一份redis.conf文件到安装目录下的conf目录。以后就可以使用该文件进行配置的更改和启动Redis服务。</li>
+<li>使用配置文件启动Redis服务，运行<code>redis.server /conf/redis.conf</code>指令</li>
+<li>使用客户端连接服务，运行<code>redis-cli -h XX -p 6379</code>(-h省略表示本机) </li>
+<li>测试链接同上。</li>
+<li>查看Redis进程是否开启，运行<code>ps -ef|grep redis</code>指令。</li>
+<li>关闭Redis服务，<code>127.0.0.1:6379&gt; shutdown</code>使用shutdown指令关闭。</li>
+<li>推出客户端，使用<code>exit</code>指令。</li>
+</ol>
+<p><strong>注意：</strong>Redis默认不是后台方式启动的。通过修改配置文件redis.conf的<code>daemonize yes</code>改为后台启动。</p>
+<h3 id="3-redis-benchmark测试性能-1"><a href="#3-redis-benchmark测试性能-1" class="headerlink" title="3. redis-benchmark测试性能"></a>3. redis-benchmark测试性能</h3><p>redis测试性能：</p>
+<p><img src="/2021/03/31/Redis-study01/1.png" alt="1"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#测试100个并发连接，10万请求</span></span><br><span class="line">redis-benchmark -h localhost -p 6379 -c 100 -n 100000</span><br></pre></td></tr></table></figure>
+<p>测试结果分析：<br><img src="/2021/03/31/Redis-study01/2.png" alt="2"></p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/john_alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/jonn_WeChat.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2021/03/31/Redis-study01/" target="_blank">Redis学习之路（一）</a>
-  
-    </h1>
-  
+      </a>
+    </div>
+    
 
-
-        <div class="article-info info-on-right">
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          ColCoding
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://example.com/2021/03/31/Redis-study01/" title="Redis学习之路（一）" target="_blank">http://example.com/2021/03/31/Redis-study01/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/31/Redis-study01/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/03/18/Spring%E6%A1%86%E6%9E%B6%E7%9A%84IoC%E6%93%8D%E4%BD%9C%E6%A8%A1%E6%8B%9F/" class="archive-article-date">
-        <time datetime="2021-03-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-18</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2021/03/31/Redis%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Redis学习之路（一）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/03/18/Spring%E6%A1%86%E6%9E%B6%E7%9A%84IoC%E6%93%8D%E4%BD%9C%E6%A8%A1%E6%8B%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring框架的IoC操作模拟</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2021/03/18/Spring%E6%A1%86%E6%9E%B6%E7%9A%84IoC%E6%93%8D%E4%BD%9C%E6%A8%A1%E6%8B%9F/" target="_blank">Spring框架的IoC操作模拟</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/03/12/struts2%E6%A1%86%E6%9E%B6/" class="archive-article-date">
-        <time datetime="2021-03-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-12</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2021/03/12/struts2%E6%A1%86%E6%9E%B6/" target="_blank">快速排序算法思想及其代码实现</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Java web开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Struts2</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2021/01/03/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/" class="archive-article-date">
-        <time datetime="2021-01-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2021/01/03/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/" target="_blank">区块链是图灵完备的？</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图灵完备</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
 
 
           </div>
@@ -472,8 +510,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
