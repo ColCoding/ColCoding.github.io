@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Java面试宝典（四） | ColCoding小站</title>
+  <title>Java菜鸟面试（四） | ColCoding小站</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="声明：本文仅供个人学习研究使用！">
+  <meta name="description" content="声明：本文仅供个人学习研究使用！目录：关于Java中集合的知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java面试宝典（四）">
+<meta property="og:title" content="Java菜鸟面试（四）">
 <meta property="og:url" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/index.html">
 <meta property="og:site_name" content="ColCoding小站">
-<meta property="og:description" content="声明：本文仅供个人学习研究使用！">
+<meta property="og:description" content="声明：本文仅供个人学习研究使用！目录：关于Java中集合的知识">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/collection.png">
 <meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/map.png">
@@ -23,9 +23,14 @@
 <meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/hashmap-4.png">
 <meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/hashmap-1.png">
 <meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/hashmap-2.png">
-<meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/john_blog/blog/source_posts/Java基础问题（四）/hashmap-3.png">
+<meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/hashmap-3.png">
+<meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/concurrenthashmap-1.png">
+<meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/concurrenthashmap-2.png">
+<meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/linkedhashmap-1.jpg">
+<meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/condition-1.png">
+<meta property="og:image" content="http://example.com/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/condition-2.png">
 <meta property="article:published_time" content="2020-10-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-04-06T14:46:10.903Z">
+<meta property="article:modified_time" content="2021-04-07T05:13:01.049Z">
 <meta property="article:author" content="ColCoding">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="常见问题">
@@ -215,7 +220,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      Java面试宝典（四）
+      Java菜鸟面试（四）
     </h1>
   
 
@@ -241,7 +246,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">3k字</span>
+      <span class="post-count">8.1k字</span>
     </span>
   </span>
 
@@ -250,7 +255,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">10分</span>
+      <span class="post-count">29分</span>
     </span>
   </span>
 </div>
@@ -261,7 +266,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="声明：本文仅供个人学习研究使用！"><a href="#声明：本文仅供个人学习研究使用！" class="headerlink" title="声明：本文仅供个人学习研究使用！"></a>声明：本文仅供个人学习研究使用！</h4><a id="more"></a>
+    <h4 id="声明：本文仅供个人学习研究使用！"><a href="#声明：本文仅供个人学习研究使用！" class="headerlink" title="声明：本文仅供个人学习研究使用！"></a>声明：本文仅供个人学习研究使用！</h4><h4 id="目录：关于Java中集合的知识"><a href="#目录：关于Java中集合的知识" class="headerlink" title="目录：关于Java中集合的知识"></a>目录：关于Java中集合的知识</h4><a id="more"></a>
 
 <h4 id="2-1-Java中有哪些容器（集合类）？"><a href="#2-1-Java中有哪些容器（集合类）？" class="headerlink" title="2.1 Java中有哪些容器（集合类）？"></a>2.1 Java中有哪些容器（集合类）？</h4><p>Java中的集合类主要由Collection和Map这两个接口派生而出，其中Collection接口又派生出三个子接口，分别是Set、List、Queue。所有的Java集合类，都是Set、List、Queue、Map这四个接口的实现类，这四个接口将集合分成了四大类，其中</p>
 <ul>
@@ -296,7 +301,7 @@
 <p>先判断数组是否为空，若数组为空则进行第一次扩容（resize）；</p>
 </li>
 <li><p>计算索引：</p>
-<p>通过hash算法，计算键值对在数组中的索引；</p>
+<p>通过hash算法，计算键值对在数组中的索引；<strong>index= length-1 &amp; hash值</strong></p>
 </li>
 <li><p>插入数据：</p>
 <ul>
@@ -325,22 +330,24 @@
 <p>DK8中的HashMap，<strong>是基于数组+链表+红黑树来实现的</strong>，它的底层维护一个<strong>Node数组</strong>。当链表的存储的数据个数大于等于8的时候，不再采用链表存储，而采用了红黑树存储结构。<strong>这么做主要是在查询的时间复杂度上进行优化，链表为O(N)，而红黑树一直是O(logN)，可以大大的提高查找性能。</strong></p>
 <h4 id="2-8-介绍一下HashMap底层的实现原理"><a href="#2-8-介绍一下HashMap底层的实现原理" class="headerlink" title="2.8 介绍一下HashMap底层的实现原理"></a>2.8 介绍一下HashMap底层的实现原理</h4><p>B站视频连接：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1LJ411W7dP?p=2&amp;spm_id_from=pageDriver">https://www.bilibili.com/video/BV1LJ411W7dP?p=2&amp;spm_id_from=pageDriver</a></p>
 <p>它基于hash算法，通过put方法和get方法存储和获取对象。</p>
-<p>存储对象时，我们将K/V传给put方法时，它调用K的hashCode计算hash从而得到bucket位置，进一步存储，HashMap会根据当前bucket的占用情况自动调整容量(超过Load Facotr则resize为原来的2倍)。获取对象时，我们将K传给get，它调用hashCode计算hash从而得到bucket位置，并进一步调用equals()方法确定键值对。</p>
+<p>存储对象时，我们将K/V传给put方法时，它调用K的hashCode计算hash从而得到bucket位置，进一步存储，HashMap会根据当前bucket的占用情况自动调整容量(超过Load Facotr则resize为原来的2倍)。</p>
+<p>获取对象时，我们将K传给get，它调用hashCode计算hash从而得到bucket位置，并进一步调用equals()方法确定键值对。</p>
 <p>如果发生碰撞的时候，HashMap通过链表将产生碰撞冲突的元素组织起来。在Java 8中，如果一个bucket中碰撞冲突的元素超过某个限制(默认是8)，则使用红黑树来替换链表，从而提高速度。</p>
 <h4 id="2-9-介绍一下HashMap的扩容机制"><a href="#2-9-介绍一下HashMap的扩容机制" class="headerlink" title="2.9 介绍一下HashMap的扩容机制"></a>2.9 介绍一下HashMap的扩容机制</h4><ol>
-<li>数组的初始容量为16，而容量是以2的次方扩充的，一是为了提高性能使用足够大的数组，二是为了能使用位运算代替取模预算(据说提升了5~8倍)。</li>
-<li>数组是否需要扩充是通过负载因子判断的，如果当前元素个数为数组容量的0.75时，就会扩充数组。这个0.75就是默认的负载因子，可由构造器传入。我们也可以设置大于1的负载因子，这样数组就不会扩充，牺牲性能，节省内存。</li>
-<li>为了解决碰撞，数组中的元素是单向链表类型。当链表长度到达一个阈值时（7或8），会将链表转换成红黑树提高性能。而当链表长度缩小到另一个阈值时（6），又会将红黑树转换回单向链表提高性能。</li>
+<li>数组的初始容量为16，而容量是以2的次方扩充的，一是为了提高性能使用足够大的数组，二是为了能使用位运算代替取模运算(据说提升了5~8倍)。</li>
+<li>数组是否需要扩充是通过<strong>负载因子判断</strong>的，如果当前元素个数为数组容量的0.75时，就会扩充数组。这个0.75就是默认的负载因子，可由构造器传入。我们也可以设置大于1的负载因子，这样数组就不会扩充，牺牲性能，节省内存。</li>
+<li><strong>为了解决碰撞，数组中的元素是单向链表类型。当链表长度到达一个阈值时（7或8），会将链表转换成红黑树提高性能。而当链表长度缩小到另一个阈值时（6），又会将红黑树转换回单向链表提高性能。</strong></li>
 <li>对于第三点补充说明，检查链表长度转换成红黑树之前，还会先检测当前数组数组是否到达一个阈值（64），如果没有到达这个容量，会放弃转换，先去扩充数组。所以上面也说了链表长度的阈值是7或8，因为会有一次放弃转换的操作。</li>
+<li>为什么需要扩容机制？<strong>为了解决哈希冲突导致的链化影像查询效率的问题，扩容会缓解该问题。</strong></li>
 </ol>
 <p><strong>补充知识：</strong></p>
 <p>例如我们从16扩展为32时，具体的变化如下所示：</p>
 <p><img src="/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/hashmap-1.png" alt="hashmap-1"></p>
 <p>因此元素在重新计算hash之后，因为n变为2倍，那么n-1的mask范围在高位多1bit(红色)，因此新的index就会发生这样的变化：</p>
 <p><img src="/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/hashmap-2.png" alt="hashmap-2"></p>
-<p>因此，我们在扩充HashMap的时候，不需要重新计算hash，只需要看看原来的hash值新增的那个bit是1还是0就好了，是0的话索引没变，是1的话索引变成“原索引+oldCap”。可以看看下图为16扩充为32的resize示意图：</p>
-<p><img src="/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/john_blog\blog\source_posts\Java基础问题（四）\hashmap-3.png" alt="hashmap-3"></p>
-<p>这个设计确实非常的巧妙，既省去了重新计算hash值的时间，而且同时，由于新增的1bit是0还是1可以认为是随机的，因此resize的过程，均匀的把之前的冲突的节点分散到新的bucket了。</p>
+<p>因此，<strong>我们在扩充HashMap的时候，不需要重新计算hash</strong>，只需要看看<strong>原来的hash值新增的那个bit是1还是0</strong>就好了，是0的话索引没变，是1的话索引变成“原索引+oldCap”。可以看看下图为16扩充为32的resize示意图：</p>
+<p><img src="/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/hashmap-3.png" alt="hashmap-3"></p>
+<p>这个设计确实非常的巧妙，既省去了重新计算hash值的时间，而且同时，<strong>由于新增的1bit是0还是1可以认为是随机的，因此resize的过程，均匀的把之前的冲突的节点分散到新的bucket了。</strong></p>
 <h4 id="2-10-HashMap中的循环链表是如何产生的"><a href="#2-10-HashMap中的循环链表是如何产生的" class="headerlink" title="2.10 HashMap中的循环链表是如何产生的"></a>2.10 HashMap中的循环链表是如何产生的</h4><p>在多线程的情况下，当重新调整HashMap大小的时候，就会存在条件竞争，因为如果两个线程都发现HashMap需要重新调整大小了，它们会同时试着调整大小。在调整大小的过程中，存储在链表中的元素的次序会反过来，因为移动到新的bucket位置的时候，HashMap并不会将元素放在链表的尾部，而是放在头部，这是为了避免尾部遍历。如果条件竞争发生了，那么就会产生死循环了。</p>
 <h4 id="2-11-HashMap为什么用红黑树而不用B树？"><a href="#2-11-HashMap为什么用红黑树而不用B树？" class="headerlink" title="2.11 HashMap为什么用红黑树而不用B树？"></a>2.11 HashMap为什么用红黑树而不用B树？</h4><p>B/B+树多用于外存上时，B/B+也被成为一个磁盘友好的数据结构。</p>
 <p>HashMap本来是数组+链表的形式，链表由于其查找慢的特点，所以需要被查找效率更高的树结构来替换。如果用B/B+树的话，在数据量不是很多的情况下，数据都会“挤在”一个结点里面，这个时候遍历效率就退化成了链表。</p>
@@ -353,11 +360,175 @@
 <h4 id="2-14-HashMap是如何解决哈希冲突的？"><a href="#2-14-HashMap是如何解决哈希冲突的？" class="headerlink" title="2.14 HashMap是如何解决哈希冲突的？"></a>2.14 HashMap是如何解决哈希冲突的？</h4><p>为了解决碰撞，数组中的元素是单向链表类型。当链表长度到达一个阈值时，会将链表转换成红黑树提高性能。而当链表长度缩小到另一个阈值时，又会将红黑树转换回单向链表提高性能。</p>
 <h4 id="2-15-说一说HashMap和HashTable的区别"><a href="#2-15-说一说HashMap和HashTable的区别" class="headerlink" title="2.15 说一说HashMap和HashTable的区别"></a>2.15 说一说HashMap和HashTable的区别</h4><ol>
 <li>Hashtable是一个线程安全的Map实现，但HashMap是线程不安全的实现，所以HashMap比Hashtable的性能高一点。</li>
-<li>Hashtable不允许使用null作为key和value，如果试图把null值放进Hashtable中，将会引发空指针异常，但HashMap可以使用null作为key或value。</li>
+<li><strong>Hashtable不允许使用null作为key和value</strong>，如果试图把null值放进Hashtable中，将会引发空指针异常，但<strong>HashMap可以使用null作为key或value。</strong></li>
 </ol>
 <p><strong>补充知识：</strong></p>
-<p>从Hashtable的类名上就可以看出它是一个古老的类，它的命名甚至没有遵守Java的命名规范：每个单词的首字母都应该大写。也许当初开发Hashtable的工程师也没有注意到这一点，后来大量Java程序中使用了Hashtable类，所以这个类名也就不能改为HashTable了，否则将导致大量程序需要改写。</p>
-<p>与Vector类似的是，尽量少用Hashtable实现类，即使需要创建线程安全的Map实现类，也无须使用Hashtable实现类，可以通过Collections工具类把HashMap变成线程安全的Map。</p>
+<p>从Hashtable的类名上就可以看出它是一个古老的类，它的命名甚至没有遵守Java的命名规范：每个单词的首字母都应该大写。也许当初开发Hashtable的工程师也没有注意到这一点，<strong>后来大量Java程序中使用了Hashtable类，所以这个类名也就不能改为HashTable了，否则将导致大量程序需要改写。</strong></p>
+<p>与Vector类似的是，尽量少用Hashtable实现类，即使需要创建线程安全的Map实现类，也无须使用Hashtable实现类，<strong>可以通过Collections工具类把HashMap变成线程安全的Map。</strong></p>
+<h4 id="2-16-HashMap与ConcurrentHashMap有什么区别？"><a href="#2-16-HashMap与ConcurrentHashMap有什么区别？" class="headerlink" title="2.16 HashMap与ConcurrentHashMap有什么区别？"></a>2.16 HashMap与ConcurrentHashMap有什么区别？</h4><p>HashMap是非线程安全的，这意味着<strong>不应该在多线程中对这些Map进行修改操作</strong>，否则会产生数据不一致的问题，<strong>甚至还会因为并发插入元素而导致链表成环</strong>，这样在查找时就会发生死循环，影响到整个应用程序。</p>
+<p>Collections工具类可以将一个Map转换成线程安全的实现，其实也就是通过一个包装类，然后把所有功能都委托给传入的Map，而包<strong>装类是基于synchronized关键字来保证线程安全的</strong>（Hashtable也是基于synchronized关键字），<strong>底层使用的是互斥锁，性能与吞吐量比较低。</strong></p>
+<p>ConcurrentHashMap的实现细节远没有这么简单，因此性能也要高上许多。它没有使用一个全局锁来锁住自己，而是<strong>采用了减少锁粒度的方法，</strong>尽量减少因为竞争锁而导致的阻塞与冲突，而且ConcurrentHashMap的检索操作是不需要锁的。</p>
+<h4 id="2-17-介绍一下ConcurrentHashMap是怎么实现的？（看完线程再过来看）"><a href="#2-17-介绍一下ConcurrentHashMap是怎么实现的？（看完线程再过来看）" class="headerlink" title="2.17 介绍一下ConcurrentHashMap是怎么实现的？（看完线程再过来看）"></a>2.17 介绍一下ConcurrentHashMap是怎么实现的？（看完线程再过来看）</h4><p>JDK 1.7中的实现：</p>
+<p>在 jdk 1.7 中，ConcurrentHashMap 是由 Segment 数据结构和 HashEntry 数组结构构成，采取分段锁来保证安全性。Segment 是 ReentrantLock 重入锁，在 ConcurrentHashMap 中扮演锁的角色，HashEntry 则用于存储键值对数据。一个 ConcurrentHashMap 里包含一个 Segment 数组，一个 Segment 里包含一个 HashEntry 数组，Segment 的结构和 HashMap 类似，是一个数组和链表结构。</p>
+<p><img src="/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/concurrenthashmap-1.png" alt="concurrenthashmap-1"></p>
+<p>JDK 1.8中的实现：</p>
+<p>JDK1.8 的实现已经摒弃了 Segment 的概念，而是直接用 Node 数组+链表+红黑树的数据结构来实现，并发控制使用 Synchronized 和 CAS 来操作，整个看起来就像是优化过且线程安全的 HashMap，虽然在 JDK1.8 中还能看到 Segment 的数据结构，但是已经简化了属性，只是为了兼容旧版本。</p>
+<p><img src="/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/concurrenthashmap-2.png" alt="concurrenthashmap-2"></p>
+<h4 id="2-18-ConcurrentHashMap是怎么分段分组的？（看完线程再过来看）"><a href="#2-18-ConcurrentHashMap是怎么分段分组的？（看完线程再过来看）" class="headerlink" title="2.18 ConcurrentHashMap是怎么分段分组的？（看完线程再过来看）"></a>2.18 ConcurrentHashMap是怎么分段分组的？（看完线程再过来看）</h4><p>get操作：</p>
+<p>Segment的get操作实现非常简单和高效，先经过一次再散列，然后使用这个散列值通过散列运算定位到 Segment，再通过散列算法定位到元素。get操作的高效之处在于整个get过程都不需要加锁，除非读到空的值才会加锁重读。原因就是将使用的共享变量定义成 <code>volatile</code> 类型。</p>
+<p>put操作：</p>
+<p>当执行put操作时，会经历两个步骤：</p>
+<ol>
+<li>判断是否需要扩容；</li>
+<li>定位到添加元素的位置，将其放入 HashEntry 数组中。</li>
+</ol>
+<p>插入过程会进行第一次 key 的 hash 来定位 Segment 的位置，如果该 Segment 还没有初始化，即通过 CAS 操作进行赋值，然后进行第二次 hash 操作，找到相应的 HashEntry 的位置，这里会利用继承过来的锁的特性，在将数据插入指定的 HashEntry 位置时（尾插法），会通过继承 ReentrantLock 的 <code>tryLock()</code> 方法尝试去获取锁，如果获取成功就直接插入相应的位置，如果已经有线程获取该Segment的锁，那当前线程会以自旋的方式去继续的调用 <code>tryLock()</code> 方法去获取锁，超过指定次数就挂起，等待唤醒。</p>
+<h4 id="2-19-说一说你对LinkedHashMap的理解"><a href="#2-19-说一说你对LinkedHashMap的理解" class="headerlink" title="2.19 说一说你对LinkedHashMap的理解"></a>2.19 说一说你对LinkedHashMap的理解</h4><p>LinkedHashMap使用双向链表来维护key-value对的顺序（其实只需要考虑key的顺序），该链表负责维护Map的迭代顺序，迭代顺序与key-value对的插入顺序保持一致。</p>
+<p>LinkedHashMap可以避免对HashMap、Hashtable里的key-value对进行排序（只要插入key-value对时保持顺序即可），同时又可避免使用TreeMap所增加的成本。</p>
+<p>LinkedHashMap需要维护元素的插入顺序，因此性能略低于HashMap的性能。但因为它以链表来维护内部顺序，所以在迭代访问Map里的全部元素时将有较好的性能。</p>
+<h4 id="2-20-请介绍LinkedHashMap的底层原理"><a href="#2-20-请介绍LinkedHashMap的底层原理" class="headerlink" title="2.20 请介绍LinkedHashMap的底层原理"></a>2.20 请介绍LinkedHashMap的底层原理</h4><p>LinkedHashMap继承于HashMap，它在HashMap的基础上，通过维护一条双向链表，解决了HashMap不能随时保持遍历顺序和插入顺序一致的问题。在实现上，LinkedHashMap很多方法直接继承自HashMap，仅为维护双向链表重写了部分方法。</p>
+<p>如下图，淡蓝色的箭头表示前驱引用，红色箭头表示后继引用。每当有新的键值对节点插入时，新节点最终会接在tail引用指向的节点后面。而tail引用则会移动到新的节点上，这样一个双向链表就建立起来了。</p>
+<p><img src="/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/linkedhashmap-1.jpg" alt="linkedhashmap-1"></p>
+<h4 id="2-21-请介绍TreeMap的底层原理"><a href="#2-21-请介绍TreeMap的底层原理" class="headerlink" title="2.21 请介绍TreeMap的底层原理"></a>2.21 请介绍TreeMap的底层原理</h4><p>TreeMap基于红黑树（Red-Black tree）实现。映射根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序，具体取决于使用的构造方法。TreeMap的基本操作containsKey、get、put、remove方法，它的时间复杂度是log(N)。</p>
+<p>TreeMap包含几个重要的成员变量：root、size、comparator。其中root是红黑树的根节点。它是Entry类型，Entry是红黑树的节点，它包含了红黑树的6个基本组成：key、value、left、right、parent和color。Entry节点根据根据Key排序，包含的内容是value。Entry中key比较大小是根据比较器comparator来进行判断的。size是红黑树的节点个数。</p>
+<h4 id="2-22-Map和Set有什么区别？"><a href="#2-22-Map和Set有什么区别？" class="headerlink" title="2.22 Map和Set有什么区别？"></a>2.22 Map和Set有什么区别？</h4><p>Set代表无序的，元素不可重复的集合；</p>
+<p>Map代表具有映射关系（key-value）的集合，其所有的key是一个Set集合，<strong>即key无序且不能重复。</strong></p>
+<h4 id="2-23-List和Set有什么区别"><a href="#2-23-List和Set有什么区别" class="headerlink" title="2.23 List和Set有什么区别"></a>2.23 List和Set有什么区别</h4><p>Set代表无序的，元素不可重复的集合；</p>
+<p>List代表有序的，元素可以重复的集合。</p>
+<h4 id="2-24-ArrayList和LinkedList有什么区别？"><a href="#2-24-ArrayList和LinkedList有什么区别？" class="headerlink" title="2.24 ArrayList和LinkedList有什么区别？"></a>2.24 ArrayList和LinkedList有什么区别？</h4><ol>
+<li>ArrayList的实现是基于数组，LinkedList的实现是基于双向链表；</li>
+<li><strong>对于随机访问ArrayList要优于LinkedList</strong>，ArrayList可以根据下标以O(1)时间复杂度对元素进行随机访问，而LinkedList的每一个元素都依靠地址指针和它后一个元素连接在一起，查找某个元素的时间复杂度是O(N)；</li>
+<li>对于<strong>插入和删除操作，LinkedList要优于ArrayList</strong>，因为当元素被添加到LinkedList任意位置的时候，不需要像ArrayList那样重新计算大小或者是更新索引；</li>
+<li><strong>LinkedList比ArrayList更占内存</strong>，因为LinkedList的节点除了存储数据，还存储了两个引用，一个指向前一个元素，一个指向后一个元素。</li>
+</ol>
+<h4 id="2-25-有哪些线程安全的List？"><a href="#2-25-有哪些线程安全的List？" class="headerlink" title="2.25 有哪些线程安全的List？"></a>2.25 有哪些线程安全的List？</h4><ol>
+<li><p>Vector</p>
+<p>Vector是比较古老的API，虽然保证了线程安全，但是由于效率低一般不建议使用。</p>
+</li>
+<li><p>Collections.SynchronizedList</p>
+<p>SynchronizedList是Collections的内部类，Collections提供了synchronizedList方法，可以将一个线程不安全的List包装成线程安全的List，即SynchronizedList。它比Vector有更好的扩展性和兼容性，但是它所有的方法都带有同步锁，也不是性能最优的List。</p>
+</li>
+<li><p>CopyOnWriteArrayList</p>
+<p>CopyOnWriteArrayList是Java 1.5在java.util.concurrent包下增加的类，它采用复制底层数组的方式来实现写操作。当线程对此类集合执行读取操作时，线程将会直接读取集合本身，无须加锁与阻塞。当线程对此类集合执行写入操作时，集合会在底层复制一份新的数组，接下来对新的数组执行写入操作。由于对集合的写入操作都是对数组的副本执行操作，因此它是线程安全的。在所有线程安全的List中，它是性能最优的方案。</p>
+</li>
+</ol>
+<h4 id="2-26-介绍一下ArrayList的数据结构？"><a href="#2-26-介绍一下ArrayList的数据结构？" class="headerlink" title="2.26 介绍一下ArrayList的数据结构？"></a>2.26 介绍一下ArrayList的数据结构？</h4><p>ArrayList的底层是用数组来实现的，默认第一次插入元素时创建大小为10的数组，超出限制时会增加50%的容量，并且数据以 <code>System.arraycopy()</code> 复制到新的数组，因此最好能给出数组大小的预估值。</p>
+<p>按数组下标访问元素的性能很高，这是数组的基本优势。直接在数组末尾加入元素的性能也高，但如果按下标插入、删除元素，则要用 <code>System.arraycopy()</code> 来移动部分受影响的元素，性能就变差了，这是基本劣势。</p>
+<h4 id="2-27-谈谈CopyOnWriteArrayList的原理"><a href="#2-27-谈谈CopyOnWriteArrayList的原理" class="headerlink" title="2.27 谈谈CopyOnWriteArrayList的原理"></a>2.27 谈谈CopyOnWriteArrayList的原理</h4><p>CopyOnWriteArrayList是Java并发包里提供的并发类，简单来说它就是一个线程安全且读操作无锁的ArrayList。正如其名字一样，在写操作时会复制一份新的List，在新的List上完成写操作，然后再将原引用指向新的List。这样就保证了写操作的线程安全。</p>
+<p>CopyOnWriteArrayList允许线程并发访问读操作，这个时候是没有加锁限制的，性能较高。而写操作的时候，则首先将容器复制一份，然后在新的副本上执行写操作，这个时候写操作是上锁的。结束之后再将原容器的引用指向新容器。注意，在上锁执行写操作的过程中，如果有需要读操作，会作用在原容器上。因此上锁的写操作不会影响到并发访问的读操作。</p>
+<ul>
+<li>优点：读操作性能很高，因为无需任何同步措施，比较适用于读多写少的并发场景。在遍历传统的List时，若中途有别的线程对其进行修改，则会抛出ConcurrentModificationException异常。而CopyOnWriteArrayList由于其”读写分离”的思想，遍历和修改操作分别作用在不同的List容器，所以在使用迭代器进行遍历时候，也就不会抛出ConcurrentModificationException异常了。</li>
+<li>缺点：一是内存占用问题，毕竟每次执行写操作都要将原容器拷贝一份，数据量大时，对内存压力较大，可能会引起频繁GC。二是无法保证实时性，Vector对于读写操作均加锁同步，可以保证读和写的强一致性。而CopyOnWriteArrayList由于其实现策略的原因，写和读分别作用在新老不同容器上，在写操作执行过程中，读不会阻塞但读取到的却是老容器的数据。</li>
+</ul>
+<h4 id="2-28-说一说TreeSet和HashSet的区别"><a href="#2-28-说一说TreeSet和HashSet的区别" class="headerlink" title="2.28 说一说TreeSet和HashSet的区别"></a>2.28 说一说TreeSet和HashSet的区别</h4><p>HashSet、TreeSet中的元素都是不能重复的，并且它们都是线程不安全的，二者的区别是：</p>
+<ol>
+<li>HashSet中的元素可以是null，但TreeSet中的元素不能是null；</li>
+<li>HashSet不能保证元素的排列顺序，而TreeSet支持自然排序、定制排序两种排序的方式；</li>
+<li>HashSet底层是采用哈希表实现的，而TreeSet底层是采用红黑树实现的。</li>
+</ol>
+<h4 id="2-29-说一说HashSet的底层结构"><a href="#2-29-说一说HashSet的底层结构" class="headerlink" title="2.29 说一说HashSet的底层结构"></a>2.29 说一说HashSet的底层结构</h4><p>HashSet是基于HashMap实现的，默认构造函数是构建一个初始容量为16，负载因子为0.75 的HashMap。它封装了一个 HashMap 对象来存储所有的集合元素，所有放入 HashSet 中的集合元素实际上由 HashMap 的 key 来保存，而 HashMap 的 value 则存储了一个 PRESENT，它是一个静态的 Object 对象。</p>
+<h4 id="2-30-BlockingQueue中有哪些方法，为什么这样设计？"><a href="#2-30-BlockingQueue中有哪些方法，为什么这样设计？" class="headerlink" title="2.30 BlockingQueue中有哪些方法，为什么这样设计？"></a>2.30 BlockingQueue中有哪些方法，为什么这样设计？</h4><p>为了应对不同的业务场景，BlockingQueue 提供了4 组不同的方法用于插入、移除以及对队列中的元素进行检查。如果请求的操作不能得到立即执行的话，每组方法的表现是不同的。这些方法如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">抛异常</th>
+<th align="center">特定值</th>
+<th align="center">阻塞</th>
+<th align="center">超时</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">插入</td>
+<td align="center">add(e)</td>
+<td align="center">offer(e)</td>
+<td align="center">put(e)</td>
+<td align="center">offer(e, time, unit)</td>
+</tr>
+<tr>
+<td align="center">移除</td>
+<td align="center">remove()</td>
+<td align="center">poll()</td>
+<td align="center">take()</td>
+<td align="center">poll(time, unit)</td>
+</tr>
+<tr>
+<td align="center">检查</td>
+<td align="center">element()</td>
+<td align="center">peek()</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>四组不同的行为方式含义如下：</p>
+<ul>
+<li>抛异常：如果操作无法立即执行，则抛一个异常；</li>
+<li>特定值：如果操作无法立即执行，则返回一个特定的值(一般是 true / false)。</li>
+<li>阻塞：如果操作无法立即执行，则该方法调用将会发生阻塞，直到能够执行；</li>
+<li>超时：如果操作无法立即执行，则该方法调用将会发生阻塞，直到能够执行。但等待时间不会超过给定值，并返回一个特定值以告知该操作是否成功(典型的是true / false)。</li>
+</ul>
+<h4 id="2-31-BlockingQueue是怎么实现的？"><a href="#2-31-BlockingQueue是怎么实现的？" class="headerlink" title="2.31 BlockingQueue是怎么实现的？"></a>2.31 BlockingQueue是怎么实现的？</h4><p>BlockingQueue是一个接口，它的实现类有ArrayBlockingQueue、DelayQueue、 LinkedBlockingQueue、PriorityBlockingQueue、SynchronousQueue等。它们的区别主要体现在存储结构上或对元素操作上的不同，但是对于put与take操作的原理是类似的。下面以ArrayBlockingQueue为例，来说明BlockingQueue的实现原理。</p>
+<p>首先看一下ArrayBlockingQueue的构造函数，它初始化了put和take函数中用到的关键成员变量，这两个变量的类型分别是ReentrantLock和Condition。ReentrantLock是AbstractQueuedSynchronizer（AQS）的子类，它的newCondition函数返回的Condition实例，是定义在AQS类内部的ConditionObject类，该类可以直接调用AQS相关的函数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">ArrayBlockingQueue</span><span class="params">(<span class="keyword">int</span> capacity, <span class="keyword">boolean</span> fair)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (capacity &lt;= <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException();</span><br><span class="line">  <span class="keyword">this</span>.items = <span class="keyword">new</span> Object[capacity];</span><br><span class="line">  lock = <span class="keyword">new</span> ReentrantLock(fair);</span><br><span class="line">  notEmpty = lock.newCondition();</span><br><span class="line">  notFull = lock.newCondition();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>put函数会在队列末尾添加元素，如果队列已经满了，无法添加元素的话，就一直阻塞等待到可以加入为止。函数的源码如下所示。我们会发现put函数使用了wait/notify的机制。与一般生产者-消费者的实现方式不同，同步队列使用ReentrantLock和Condition相结合的机制，即先获得锁，再等待，而不是synchronized和wait的机制。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(E e)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">  checkNotNull(e);</span><br><span class="line">  <span class="keyword">final</span> ReentrantLock lock = <span class="keyword">this</span>.lock;</span><br><span class="line">  lock.lockInterruptibly();</span><br><span class="line">  <span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(count == items.length)</span><br><span class="line">      notFull.await();</span><br><span class="line">    enqueue(e);</span><br><span class="line">  &#125; <span class="keyword">finally</span>&#123;</span><br><span class="line">    lock.unlock();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再来看一下消费者调用的take函数，take函数在队列为空时会被阻塞，一直到阻塞队列加入了新的元素。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">take</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">  <span class="keyword">final</span> ReentrantLock lock = <span class="keyword">this</span>.lock;</span><br><span class="line">  lock.lockInterruptibly();</span><br><span class="line">  <span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (count == <span class="number">0</span>)</span><br><span class="line">      notEmpty.await();</span><br><span class="line">    <span class="keyword">return</span> dequeue();</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    lock.unlock();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>补充知识：</strong></p>
+<p>await操作：</p>
+<p>我们发现<code>ArrayBlockingQueue</code>并没有使用<code>Object.wait</code>，而是使用的<code>Condition.await</code>，这是为什么呢？<code>Condition</code>对象可以提供和<code>Object</code>的<code>wait</code>和<code>notify</code>一样的行为，但是后者必须先获取<code>synchronized</code>这个内置的<code>monitor</code>锁才能调用，而<code>Condition</code>则必须先获取<code>ReentrantLock</code>。这两种方式在阻塞等待时都会将相应的锁释放掉，但是<code>Condition</code>的等待可以中断，这是二者唯一的区别。</p>
+<p>我们先来看一下<code>Condition</code>的<code>await</code>函数，await函数的流程大致如下图所示。await函数主要有三个步骤，一是调用<code>addConditionWaiter</code>函数，在<code>condition wait queue</code>队列中添加一个节点，代表当前线程在等待一个消息。然后调用<code>fullyRelease</code>函数，将持有的锁释放掉，调用的是AQS的函数。最后一直调用<code>isOnSyncQueue</code>函数判断节点是否被转移到<code>sync queue</code>队列上，也就是AQS中等待获取锁的队列。如果没有，则进入阻塞状态，如果已经在队列上，则调用<code>acquireQueued</code>函数重新获取锁。</p>
+<p><img src="/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/condition-1.png" alt="condition-1"></p>
+<p>signal操作：</p>
+<p><code>signal</code>函数将<code>condition wait queue</code>队列中队首的线程节点转移等待获取锁的<code>sync queue</code>队列中。这样的话，<code>await</code>函数中调用<code>isOnSyncQueue</code>函数就会返回true，导致<code>await</code>函数进入最后一步重新获取锁的状态。</p>
+<p>我们这里来详细解析一下<code>condition wait queue</code>和<code>sync queue</code>两个队列的设计原理。<code>condition wait queue</code>是等待消息的队列，因为阻塞队列为空而进入阻塞状态的<code>take</code>函数操作就是在等待阻塞队列不为空的消息。而<code>sync queue</code>队列则是等待获取锁的队列，take函数获得了消息，就可以运行了，但是它还必须等待获取锁之后才能真正进行运行状态。</p>
+<p><code>signal</code>函数其实就做了一件事情，就是不断尝试调用<code>transferForSignal</code>函数，将<code>condition wait queue</code>队首的一个节点转移到<code>sync queue</code>队列中，直到转移成功。因为一次转移成功，就代表这个消息被成功通知到了等待消息的节点。</p>
+<p><code>signal</code>函数的示意图如下所示。</p>
+<p><img src="/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/condition-2.png" alt="condition-2"></p>
+<h4 id="2-32-Stream（不是IOStream）有哪些方法？"><a href="#2-32-Stream（不是IOStream）有哪些方法？" class="headerlink" title="2.32 Stream（不是IOStream）有哪些方法？"></a>2.32 Stream（不是IOStream）有哪些方法？</h4><p>Stream提供了大量的方法进行聚集操作，这些方法既可以是“中间的”，也可以是“末端的”。</p>
+<ul>
+<li>中间方法：中间操作允许流保持打开状态，并允许直接调用后续方法。上面程序中的map()方法就是中间方法。中间方法的返回值是另外一个流。</li>
+<li>末端方法：末端方法是对流的最终操作。当对某个Stream执行末端方法后，该流将会被“消耗”且不再可用。上面程序中的sum()、count()、average()等方法都是末端方法。</li>
+</ul>
+<p>除此之外，关于流的方法还有如下两个特征：</p>
+<ul>
+<li>有状态的方法：这种方法会给流增加一些新的属性，比如元素的唯一性、元素的最大数量、保证元素以排序的方式被处理等。有状态的方法往往需要更大的性能开销。</li>
+<li>短路方法：短路方法可以尽早结束对流的操作，不必检查所有的元素。</li>
+</ul>
+<p>下面简单介绍一下Stream常用的中间方法：</p>
+<ul>
+<li>filter(Predicate predicate)：过滤Stream中所有不符合predicate的元素。</li>
+<li>mapToXxx(ToXxxFunction mapper)：使用ToXxxFunction对流中的元素执行一对一的转换，该方法返回的新流中包含了ToXxxFunction转换生成的所有元素。</li>
+<li>peek(Consumer action)：依次对每个元素执行一些操作，该方法返回的流与原有流包含相同的元素。该方法主要用于调试。</li>
+<li>distinct()：该方法用于排序流中所有重复的元素（判断元素重复的标准是使用equals()比较返回true）。这是一个有状态的方法。</li>
+<li>sorted()：该方法用于保证流中的元素在后续的访问中处于有序状态。这是一个有状态的方法。</li>
+<li>limit(long maxSize)：该方法用于保证对该流的后续访问中最大允许访问的元素个数。这是一个有状态的、短路方法。</li>
+</ul>
+<p>下面简单介绍一下Stream常用的末端方法：</p>
+<ul>
+<li>forEach(Consumer action)：遍历流中所有元素，对每个元素执行action。</li>
+<li>toArray()：将流中所有元素转换为一个数组。</li>
+<li>reduce()：该方法有三个重载的版本，都用于通过某种操作来合并流中的元素。</li>
+<li>min()：返回流中所有元素的最小值。</li>
+<li>max()：返回流中所有元素的最大值。</li>
+<li>count()：返回流中所有元素的数量。</li>
+<li>anyMatch(Predicate predicate)：判断流中是否至少包含一个元素符合Predicate条件。</li>
+<li>noneMatch(Predicate predicate)：判断流中是否所有元素都不符合Predicate条件。</li>
+<li>findFirst()：返回流中的第一个元素。</li>
+<li>findAny()：返回流中的任意一个元素。</li>
+</ul>
+<p>除此之外，Java 8允许使用流式API来操作集合，Collection接口提供了一个stream()默认方法，该方法可返回该集合对应的流，接下来即可通过流式API来操作集合元素。由于Stream可以对集合元素进行整体的聚集操作，因此Stream极大地丰富了集合的功能。</p>
+<p><strong>补充知识：</strong></p>
+<p>Java 8新增了Stream、IntStream、LongStream、DoubleStream等流式API，这些API代表多个支持串行和并行聚集操作的元素。上面4个接口中，Stream是一个通用的流接口，而IntStream、LongStream、DoubleStream则代表元素类型为int、long、double的流。</p>
+<p>Java 8还为上面每个流式API提供了对应的Builder，例如Stream.Builder、IntStream.Builder、LongStream.Builder、DoubleStream.Builder，开发者可以通过这些Builder来创建对应的流。</p>
+<p>独立使用Stream的步骤如下：</p>
+<ol>
+<li>使用Stream或XxxStream的builder()类方法创建该Stream对应的Builder。</li>
+<li>重复调用Builder的add()方法向该流中添加多个元素。</li>
+<li>调用Builder的build()方法获取对应的Stream。</li>
+<li>调用Stream的聚集方法。</li>
+</ol>
+<p>在上面4个步骤中，第4步可以根据具体需求来调用不同的方法，Stream提供了大量的聚集方法供用户调用，具体可参考Stream或XxxStream的API文档。对于大部分聚集方法而言，每个Stream只能执行一次。</p>
 
     
 
@@ -404,7 +575,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2020/10/04/Java基础问题（四）/" title="Java面试宝典（四）" target="_blank">http://example.com/2020/10/04/Java基础问题（四）/</a>
+          <a href="http://example.com/2020/10/04/Java基础问题（四）/" title="Java菜鸟面试（四）" target="_blank">http://example.com/2020/10/04/Java基础问题（四）/</a>
         </li>
         
         <li>
@@ -512,7 +683,7 @@
   
   
     <a href="/2020/10/03/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%B8%89%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java面试宝典（三）</div>
+      <div class="article-nav-title">Java菜鸟面试（三）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -690,11 +861,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">常见问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -735,14 +914,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数据库,SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">常见问题</a>
               </li>
             
             <div class="clearfix"></div>
