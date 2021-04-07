@@ -6,25 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>选择排序算法思想及其代码实现 | ColCoding小站</title>
+  <title>Java菜鸟面试（五） | ColCoding小站</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="声明：本文仅供个人学习研究使用！目录：1. 选择排序算法思想2. 选择排序算法Java代码实现3. 选择排序算法python代码实现">
+  <meta name="description" content="声明：本文仅供个人学习研究使用！目录：IO知识问答">
 <meta property="og:type" content="article">
-<meta property="og:title" content="选择排序算法思想及其代码实现">
-<meta property="og:url" content="http://example.com/2020/11/18/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="Java菜鸟面试（五）">
+<meta property="og:url" content="http://example.com/2020/10/05/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%BA%94%EF%BC%89/index.html">
 <meta property="og:site_name" content="ColCoding小站">
-<meta property="og:description" content="声明：本文仅供个人学习研究使用！目录：1. 选择排序算法思想2. 选择排序算法Java代码实现3. 选择排序算法python代码实现">
+<meta property="og:description" content="声明：本文仅供个人学习研究使用！目录：IO知识问答">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-17T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-10T09:48:53.177Z">
+<meta property="og:image" content="http://example.com/2020/10/05/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%BA%94%EF%BC%89/io.png">
+<meta property="og:image" content="http://example.com/2020/10/05/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%BA%94%EF%BC%89/nio-1.png">
+<meta property="og:image" content="http://example.com/2020/10/05/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%BA%94%EF%BC%89/nio-2.png">
+<meta property="article:published_time" content="2020-10-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-07T14:14:24.269Z">
 <meta property="article:author" content="ColCoding">
 <meta property="article:tag" content="Java">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="排序">
-<meta property="article:tag" content="python">
+<meta property="article:tag" content="常见问题">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/10/05/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%BA%94%EF%BC%89/io.png">
   
     <link rel="alternative" href="/atom.xml" title="ColCoding小站" type="application/atom+xml">
   
@@ -202,14 +204,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-选择排序算法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Java基础问题（五）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      选择排序算法思想及其代码实现
+      Java菜鸟面试（五）
     </h1>
   
 
@@ -221,8 +223,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/11/18/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="archive-article-date">
-        <time datetime="2020-11-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-18</time>
+<a href="/2020/10/05/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%BA%94%EF%BC%89/" class="archive-article-date">
+        <time datetime="2020-10-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-05</time>
 </a>
 
   
@@ -235,7 +237,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">513字</span>
+      <span class="post-count">3k字</span>
     </span>
   </span>
 
@@ -244,7 +246,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">10分</span>
     </span>
   </span>
 </div>
@@ -255,21 +257,88 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="声明：本文仅供个人学习研究使用！"><a href="#声明：本文仅供个人学习研究使用！" class="headerlink" title="声明：本文仅供个人学习研究使用！"></a>声明：本文仅供个人学习研究使用！</h4><h2 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h2><h3 id="1-选择排序算法思想"><a href="#1-选择排序算法思想" class="headerlink" title="1. 选择排序算法思想"></a>1. 选择排序算法思想</h3><h3 id="2-选择排序算法Java代码实现"><a href="#2-选择排序算法Java代码实现" class="headerlink" title="2. 选择排序算法Java代码实现"></a>2. 选择排序算法Java代码实现</h3><h3 id="3-选择排序算法python代码实现"><a href="#3-选择排序算法python代码实现" class="headerlink" title="3. 选择排序算法python代码实现"></a>3. 选择排序算法python代码实现</h3><a id="more"></a>
+    <h4 id="声明：本文仅供个人学习研究使用！"><a href="#声明：本文仅供个人学习研究使用！" class="headerlink" title="声明：本文仅供个人学习研究使用！"></a>声明：本文仅供个人学习研究使用！</h4><h4 id="目录：IO知识问答"><a href="#目录：IO知识问答" class="headerlink" title="目录：IO知识问答"></a>目录：IO知识问答</h4><a id="more"></a>
 
-<h3 id="1-选择排序算法思想-1"><a href="#1-选择排序算法思想-1" class="headerlink" title="1.选择排序算法思想"></a>1.选择排序算法思想</h3><p>选择排序是一种简单直观的排序算法，无论什么数据进去都是 O(n²) 的时间复杂度。所以用到它的时候，数据规模越小好。唯一的优点是不占用额外的内存空间。</p>
-<p>选择排序算法思想：每次找到无序数中的最小值，和无序数中的第一个数交换位置。</p>
+<h4 id="3-1-介绍一下Java中的IO流"><a href="#3-1-介绍一下Java中的IO流" class="headerlink" title="3.1 介绍一下Java中的IO流"></a>3.1 介绍一下Java中的IO流</h4><p>IO（Input Output）用于实现对数据的输入与输出操作，Java把不同的输入/输出源（键盘、文件、网络等）抽象表述为流（Stream）。</p>
+<p>流是从起源到接收的有序数据，有了它程序就可以采用同一方式访问不同的输入/输出源。</p>
+<ul>
+<li>按照数据流向，可以将流分为输入流和输出流，其中输入流只能读取数据、不能写入数据，而输出流只能写入数据、不能读取数据。</li>
+<li>按照数据类型，可以将流分为字节流和字符流，其中字节流操作的数据单元是8位的字节，而字符流操作的数据单元是16位的字符。</li>
+<li>按照处理功能，可以将流分为节点流和处理流，其中节点流可以直接从/向一个特定的IO设备（磁盘、网络等）读/写数据，也称为低级流，而处理流是对节点流的连接或封装，用于简化数据读/写功能或提高效率，也称为高级流。</li>
+</ul>
+<p>其中，黑色字体的是抽象基类，其他所有的类都继承自它们。红色字体的是节点流，蓝色字体的是处理流。</p>
+<p><img src="/2020/10/05/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%BA%94%EF%BC%89/io.png" alt="io"></p>
+<p>根据命名很容易理解各个流的作用：</p>
+<ul>
+<li>以File开头的文件流用于访问文件；</li>
+<li>以ByteArray/CharArray开头的流用于访问内存中的数组；</li>
+<li>以Piped开头的管道流用于访问管道，实现进程之间的通信；</li>
+<li>以String开头的流用于访问内存中的字符串；</li>
+<li>以Buffered开头的缓冲流，用于在读写数据时对数据进行缓存，以减少IO次数；</li>
+<li>InputStreamReader、InputStreamWriter是转换流，用于将字节流转换为字符流；</li>
+<li>以Object开头的流是对象流，用于实现对象的序列化；</li>
+<li>以Print开头的流是打印流，用于简化打印操作；</li>
+<li>以Pushback开头的流是推回输入流，用于将已读入的数据推回到缓冲区，从而实现再次读取；</li>
+<li>以Data开头的流是特殊流，用于读写Java基本类型的数据。</li>
+</ul>
+<h4 id="3-2-怎么用流打开一个大文件？"><a href="#3-2-怎么用流打开一个大文件？" class="headerlink" title="3.2 怎么用流打开一个大文件？"></a>3.2 怎么用流打开一个大文件？</h4><p>打开大文件，<strong>应避免直接将文件中的数据全部读取到内存中，可以采用分次读取的方式。</strong></p>
 <ol>
-<li><p>首先在未排序序列中找到最小元素，存放到排序序列的起始位置。</p>
+<li><p><strong>使用缓冲流。</strong>缓冲流内部维护了一个<strong>缓冲区</strong>，通过与缓冲区的交互，<strong>减少与设备的交互次数。</strong></p>
+<p>使用缓冲输入流时，它每次会读取一批数据将缓冲区填满，每次调用读取方法并不是直接从设备取值，而是从缓冲区取值，当缓冲区为空时，它会再一次读取数据，将缓冲区填满。</p>
+<p>使用缓冲输出流时，每次调用写入方法并不是直接写入到设备，而是写入缓冲区，当缓冲区填满时它会自动刷入设备。</p>
 </li>
-<li><p>再从剩余未排序元素中继续寻找最小元素，然后放到已排序序列的末尾（未排序的头）。</p>
+<li><p>使用NIO。<strong>NIO采用内存映射文件的方式来处理输入/输出，</strong>NIO将文件或文件的一段区域映射到内存中，这样就可以像访问内存一样来访问文件了（这种方式模拟了操作系统上的虚拟内存的概念），通过这种方式来进行输入/输出比传统的输入/输出要快得多。</p>
 </li>
-<li><p>重复第二步，直到所有元素均排序完毕。</p>
-<h3 id="2-选择排序算法Java代码实现-1"><a href="#2-选择排序算法Java代码实现-1" class="headerlink" title="2.选择排序算法Java代码实现"></a>2.选择排序算法Java代码实现</h3></li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//选择排序</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (arr == <span class="keyword">null</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">int</span> minIndex = i;</span><br><span class="line">			<span class="comment">// 找到无序中的最小元素的索引</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++) &#123;</span><br><span class="line">				minIndex = arr[j] &lt; arr[minIndex] ? j : minIndex;</span><br><span class="line">			&#125;</span><br><span class="line">			swap(arr, i, minIndex);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 交换数组中的任意两个元素</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> tmp = arr[i];</span><br><span class="line">		arr[i] = arr[j];</span><br><span class="line">		arr[j] = tmp;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-选择排序算法python代码实现-1"><a href="#3-选择排序算法python代码实现-1" class="headerlink" title="3.选择排序算法python代码实现"></a>3.选择排序算法python代码实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">selectionSort</span>(<span class="params">lis</span>):</span></span><br><span class="line">    n = <span class="built_in">len</span>(lis)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span> <span class="keyword">or</span> n &lt;<span class="number">2</span>):</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,n-<span class="number">1</span>):</span><br><span class="line">        minIndex = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>,n):</span><br><span class="line">            minIndex = j <span class="keyword">if</span> lis[j] &lt;lis[minIndex] <span class="keyword">else</span> minIndex</span><br><span class="line">        swap(lis,i,minIndex)</span><br><span class="line"></span><br><span class="line"><span class="comment">#交换数组中的两个元素</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">swap</span>(<span class="params">lis,i,j</span>):</span></span><br><span class="line">    temp = lis[i]</span><br><span class="line">    lis[i] = lis[j]</span><br><span class="line">    lis[j] = temp</span><br></pre></td></tr></table></figure>
-<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>工程上不会使用选择排序，仅在教学中使用 时间复杂度和数据情况无关，严格O（N的平方）。空间复杂度为O(1)，不占用额外的内存空间。该算法是不稳定的的，元素存在前后交换的情况。</p>
+<h4 id="3-3-说说NIO的实现原理"><a href="#3-3-说说NIO的实现原理" class="headerlink" title="3.3 说说NIO的实现原理"></a>3.3 说说NIO的实现原理</h4><p>ava的NIO主要由三个核心部分组成：Channel、Buffer、Selector。</p>
+<p>基本上，所有的IO在NIO中都从一个Channel开始，数据可以从Channel读到Buffer中，也可以从Buffer写到Channel中。Channel有好几种类型，其中比较常用的有FileChannel、DatagramChannel、SocketChannel、ServerSocketChannel等，这些通道涵盖了UDP和TCP网络IO以及文件IO。</p>
+<p>Buffer本质上是一块可以写入数据，然后可以从中读取数据的内存。这块内存被包装成NIO Buffer对象，并提供了一组方法，用来方便的访问该块内存。Java NIO里关键的Buffer实现有CharBuffer、ByteBuffer、ShortBuffer、IntBuffer、LongBuffer、FloatBuffer、DoubleBuffer。这些Buffer覆盖了你能通过IO发送的基本数据类型，即byte、short、int、long、float、double、char。</p>
+<p>Buffer对象包含三个重要的属性，分别是capacity、position、limit，其中position和limit的含义取决于Buffer处在读模式还是写模式。但不管Buffer处在什么模式，capacity的含义总是一样的。</p>
+<ul>
+<li>capacity：作为一个内存块，Buffer有个固定的最大值，就是capacity。Buffer只能写capacity个数据，一旦Buffer满了，需要将其清空才能继续写数据往里写数据。</li>
+<li>position：当写数据到Buffer中时，position表示当前的位置。初始的position值为0。当一个数据写到Buffer后， position会向前移动到下一个可插入数据的Buffer单元。position最大可为capacity–1。当读取数据时，也是从某个特定位置读。当将Buffer从写模式切换到读模式，position会被重置为0。当从Buffer的position处读取数据时，position向前移动到下一个可读的位置。</li>
+<li>limit：在写模式下，Buffer的limit表示最多能往Buffer里写多少数据，此时limit等于capacity。当切换Buffer到读模式时， limit表示你最多能读到多少数据，此时limit会被设置成写模式下的position值。</li>
+</ul>
+<p>三个属性之间的关系，如下图所示：</p>
+<p><img src="/2020/10/05/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%BA%94%EF%BC%89/nio-1.png" alt="nio-1"></p>
+<p>Selector允许单线程处理多个 Channel，如果你的应用打开了多个连接（通道），但每个连接的流量都很低，使用Selector就会很方便。要使用Selector，得向Selector注册Channel，然后调用它的select()方法。这个方法会一直阻塞到某个注册的通道有事件就绪。一旦这个方法返回，线程就可以处理这些事件，事件例如有新连接进来，数据接收等。</p>
+<p>这是在一个单线程中使用一个Selector处理3个Channel的图示：</p>
+<p><img src="/2020/10/05/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%BA%94%EF%BC%89/nio-2.png" alt="nio-2"></p>
+<h4 id="3-4-NIO补充知识："><a href="#3-4-NIO补充知识：" class="headerlink" title="3.4 NIO补充知识："></a>3.4 NIO补充知识：</h4><p>Java NIO根据操作系统不同， 针对NIO中的Selector有不同的实现：</p>
+<ul>
+<li>macosx：KQueueSelectorProvider</li>
+<li>solaris：DevPollSelectorProvider</li>
+<li>Linux：EPollSelectorProvider (Linux kernels &gt;= 2.6)或PollSelectorProvider</li>
+<li>windows：WindowsSelectorProvider</li>
+</ul>
+<p>所以不需要特别指定，Oracle JDK会自动选择合适的Selector。如果想设置特定的Selector，可以设置属性，例如： -Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.EPollSelectorProvider。</p>
+<p>JDK在Linux已经默认使用epoll方式，但是JDK的epoll采用的是水平触发，所以Netty自4.0.16起, Netty为Linux通过JNI的方式提供了native socket transport。Netty重新实现了epoll机制。</p>
+<ol>
+<li>采用边缘触发方式；</li>
+<li>netty epoll transport暴露了更多的nio没有的配置参数，如 TCP_CORK, SO_REUSEADDR等等；</li>
+<li>C代码，更少GC，更少synchronized。</li>
+</ol>
+<h4 id="3-5-介绍一下Java的序列化与反序列化"><a href="#3-5-介绍一下Java的序列化与反序列化" class="headerlink" title="3.5 介绍一下Java的序列化与反序列化"></a>3.5 介绍一下Java的序列化与反序列化</h4><p><strong>序列化机制可以将对象转换成字节序列，这些字节序列可以保存在磁盘上，也可以在网络中传输，并允许程序将这些字节序列再次恢复成原来的对象。</strong>其中，</p>
+<p>对象的序列化（Serialize），是指将一个Java对象写入IO流中，</p>
+<p>对象的反序列化（Deserialize），则是指从IO流中恢复该Java对象。</p>
+<p>若对象要支持序列化机制，则它的类需要实现Serializable接口，该接口是一个标记接口，它没有提供任何方法，只是标明该类是可以序列化的，<strong>Java的很多类已经实现了Serializable接口，如包装类、String、Date等。</strong></p>
+<p>若要实现序列化，则需要使用对象流ObjectInputStream和ObjectOutputStream。其中，在序列化时需要调用ObjectOutputStream对象的writeObject()方法，以输出对象序列。在反序列化时需要调用ObjectInputStream对象的readObject()方法，将对象序列恢复为对象。</p>
+<h4 id="3-6-Serializable接口为什么需要定义serialVersionUID变量？"><a href="#3-6-Serializable接口为什么需要定义serialVersionUID变量？" class="headerlink" title="3.6 Serializable接口为什么需要定义serialVersionUID变量？"></a>3.6 Serializable接口为什么需要定义serialVersionUID变量？</h4><p>serialVersionUID代表序列化的版本，通过定义类的序列化版本，在反序列化时，只要对象中所存的版本和当前类的版本一致，就允许做恢复数据的操作，否则将会抛出序列化版本不一致的错误。</p>
+<p>如果不定义序列化版本，在反序列化时可能出现冲突的情况，例如：</p>
+<ol>
+<li>创建该类的实例，并将这个实例序列化，保存在磁盘上；</li>
+<li>升级这个类，例如增加、删除、修改这个类的成员变量；</li>
+<li>反序列化该类的实例，即从磁盘上恢复修改之前保存的数据。</li>
+</ol>
+<p>在第3步恢复数据的时候，当前的类已经和序列化的数据的格式产生了冲突，可能会发生各种意想不到的问题。增加了序列化版本之后，在这种情况下则可以抛出异常，以提示这种矛盾的存在，提高数据的安全性</p>
+<h4 id="3-7-除了Java自带的序列化之外，你还了解哪些序列化工具？"><a href="#3-7-除了Java自带的序列化之外，你还了解哪些序列化工具？" class="headerlink" title="3.7 除了Java自带的序列化之外，你还了解哪些序列化工具？"></a>3.7 除了Java自带的序列化之外，你还了解哪些序列化工具？</h4><ul>
+<li>JSON：目前使用比较频繁的格式化数据工具，简单直观，可读性好，有jackson，gson，fastjson等等，比较优秀的JSON解析工具的表现还是比较好的，有些json解析工具甚至速度超过了一些二进制的序列化方式。</li>
+<li>Protobuf：一个用来序列化结构化数据的技术，支持多种语言诸如C++、Java以及Python语言，可以使用该技术来持久化数据或者序列化成网络传输的数据。相比较一些其他的XML技术而言，该技术的一个明显特点就是更加节省空间（以二进制流存储）、速度更快以及更加灵活。另外Protobuf支持的数据类型相对较少，不支持常量类型。由于其设计的理念是纯粹的展现层协议（Presentation Layer），目前并没有一个专门支持Protobuf的RPC框架。</li>
+<li>Thrift：是Facebook开源提供的一个高性能，轻量级RPC服务框架，其产生正是为了满足当前大数据量、分布式、跨语言、跨平台数据通讯的需求。 但是，Thrift并不仅仅是序列化协议，而是一个RPC框架。 相对于JSON和XML而言，Thrift在空间开销和解析性能上有了比较大的提升，对于对性能要求比较高的分布式系统，它是一个优秀的RPC解决方案。但是由于Thrift的序列化被嵌入到Thrift框架里面， Thrift框架本身并没有透出序列化和反序列化接口，这导致其很难和其他传输层协议共同使用（例如HTTP）。</li>
+<li>Avro：提供两种序列化格式，即JSON格式或者Binary格式。Binary格式在空间开销和解析性能方面可以和Protobuf媲美， JSON格式方便测试阶段的调试。 Avro支持的数据类型非常丰富，包括C++语言里面的union类型。Avro支持JSON格式的IDL和类似于Thrift和Protobuf的IDL（实验阶段），这两者之间可以互转。Schema可以在传输数据的同时发送，加上JSON的自我描述属性，这使得Avro非常适合动态类型语言。 Avro在做文件持久化的时候，一般会和Schema一起存储，所以Avro序列化文件自身具有自我描述属性，所以非常适合于做Hive、Pig和MapReduce的持久化数据格式。对于不同版本的Schema，在进行RPC调用的时候，服务端和客户端可以在握手阶段对Schema进行互相确认，大大提高了最终的数据解析速度。</li>
+</ul>
+<h4 id="3-8-如果不用JSON工具，该如何实现对实体类的序列化？"><a href="#3-8-如果不用JSON工具，该如何实现对实体类的序列化？" class="headerlink" title="3.8 如果不用JSON工具，该如何实现对实体类的序列化？"></a>3.8 如果不用JSON工具，该如何实现对实体类的序列化？</h4><p>可以使用Java原生的序列化机制，但是效率比较低一些，适合小项目；</p>
+<p>可以使用其他的一些第三方类库，比如Protobuf、Thrift、Avro等。</p>
 
     
 
@@ -316,7 +385,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2020/11/18/选择排序算法/" title="选择排序算法思想及其代码实现" target="_blank">http://example.com/2020/11/18/选择排序算法/</a>
+          <a href="http://example.com/2020/10/05/Java基础问题（五）/" title="Java菜鸟面试（五）" target="_blank">http://example.com/2020/10/05/Java基础问题（五）/</a>
         </li>
         
         <li>
@@ -342,15 +411,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">常见问题</a>
         		</li>
       		
 		</ul>
@@ -406,7 +467,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/18/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/05/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%BA%94%EF%BC%89/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -421,18 +482,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/11/18/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/11/18/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          插入排序算法思想及其代码实现
+          选择排序算法思想及其代码实现
         
       </div>
     </a>
   
   
-    <a href="/2020/10/05/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E4%BA%94%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java菜鸟面试（五）</div>
+    <a href="/2020/10/04/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%9B%9B%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java菜鸟面试（四）</div>
       <i class="icon-circle-right"></i>
     </a>
   
