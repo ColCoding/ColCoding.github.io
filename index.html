@@ -202,6 +202,312 @@
             
 
   
+    <article id="post-Linux操作系统面试" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/04/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E8%AF%95/" target="_blank">Linux操作系统面试</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/04/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E8%AF%95/" class="archive-article-date">
+        <time datetime="2021-04-20T06:09:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h4 id="1-1-Linux里如何查看一个想知道的进程？"><a href="#1-1-Linux里如何查看一个想知道的进程？" class="headerlink" title="1.1 Linux里如何查看一个想知道的进程？"></a>1.1 Linux里如何查看一个想知道的进程？</h4><p><strong>查看进程运行状态的指令</strong>：ps命令。“<strong>ps -aux | grep PID</strong>”，用来查看某PID进程状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//ps使用示例</span><br><span class="line">//显示当前所有进程  </span><br><span class="line">ps -A  </span><br><span class="line">//与grep联用查找某进程  </span><br><span class="line">ps -aux | grep apache  </span><br><span class="line"></span><br><span class="line">//查看进程运行状态、查看内存使用情况的指令均可使用top指令。</span><br><span class="line">top</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-Linux里如何查看带有关键字的日志文件？"><a href="#1-2-Linux里如何查看带有关键字的日志文件？" class="headerlink" title="1.2 Linux里如何查看带有关键字的日志文件？"></a>1.2 Linux里如何查看带有关键字的日志文件？</h4><ol>
+<li><strong>cat 路径/文件名 | grep 关键词</strong></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 返回test.log中包含http的所有行</span></span><br><span class="line">cat test.log | grep <span class="string">&quot;http&quot;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>grep -i 关键词 路径/文件名</strong> （与方法一效果相同，不同写法而已）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 返回test.log中包含http的所有行(-i忽略大小写）</span></span><br><span class="line">grep -i <span class="string">&quot;http&quot;</span> ./test.log　　　</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-说说你对grep命令的了解？"><a href="#1-3-说说你对grep命令的了解？" class="headerlink" title="1.3 说说你对grep命令的了解？"></a>1.3 说说你对grep命令的了解？</h4><p>grep 命令。强大的文本搜索命令，grep(Global Regular Expression Print) 全局正则表达式搜索。</p>
+<p>grep 的工作方式是这样的，它在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。<strong>搜索的结果被送到标准输出，不影响原文件内容。</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">1.    //参数  </span><br><span class="line">2.    -A n --after-context显示匹配字符后n行  </span><br><span class="line">3.    -B n --before-context显示匹配字符前n行  </span><br><span class="line">4.    -C n --context 显示匹配字符前后n行  </span><br><span class="line">5.    -c --count 计算符合样式的列数  </span><br><span class="line">6.    -i 忽略大小写  </span><br><span class="line">7.    -l 只列出文件内容符合指定的样式的文件名称  </span><br><span class="line">8.    -f 从文件中读取关键词  </span><br><span class="line">9.    -n 显示匹配内容的所在文件中行数  </span><br><span class="line">10.   -R 递归查找文件夹  </span><br><span class="line">11.      </span><br><span class="line">12.    //grep 的规则表达式:  </span><br><span class="line">13.    ^       <span class="comment">#锚定行的开始 如：&#x27;^grep&#x27;匹配所有以grep开头的行。   </span></span><br><span class="line">14.    $       <span class="comment">#锚定行的结束 如：&#x27;grep$&#x27;匹配所有以grep结尾的行。   </span></span><br><span class="line">15.    .       <span class="comment">#匹配一个非换行符的字符 如：&#x27;gr.p&#x27;匹配gr后接一个任意字符，然后是p。    </span></span><br><span class="line">16.    *       <span class="comment">#匹配零个或多个先前字符 如：&#x27;*grep&#x27;匹配所有一个或多个空格后紧跟grep的行。  </span></span><br><span class="line">17.    .*      <span class="comment">#一起用代表任意字符。    </span></span><br><span class="line">18.    []      <span class="comment">#匹配一个指定范围内的字符，如&#x27;[Gg]rep&#x27;匹配Grep和grep。   </span></span><br><span class="line">19.    [^]     <span class="comment">#匹配一个不在指定范围内的字符，如：&#x27;[^A-FH-Z]rep&#x27;匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。    </span></span><br><span class="line">20.    \(..\)  <span class="comment">#标记匹配字符，如&#x27;\(love\)&#x27;，love被标记为1。     </span></span><br><span class="line">21.    \&lt;      <span class="comment">#锚定单词的开始，如:&#x27;\&lt;grep&#x27;匹配包含以grep开头的单词的行。  </span></span><br><span class="line">22.    \&gt;      <span class="comment">#锚定单词的结束，如&#x27;grep\&gt;&#x27;匹配包含以grep结尾的单词的行。  </span></span><br><span class="line">23.    x\&#123;m\&#125;  <span class="comment">#重复字符x，m次，如：&#x27;0\&#123;5\&#125;&#x27;匹配包含5个o的行。   </span></span><br><span class="line">24.    x\&#123;m,\&#125; <span class="comment">#重复字符x,至少m次，如：&#x27;o\&#123;5,\&#125;&#x27;匹配至少有5个o的行。    </span></span><br><span class="line">25.    x\&#123;m,n\&#125;<span class="comment">#重复字符x，至少m次，不多于n次，如：&#x27;o\&#123;5,10\&#125;&#x27;匹配5--10个o的行。    </span></span><br><span class="line">26.    \w      <span class="comment">#匹配文字和数字字符，也就是[A-Za-z0-9]，如：&#x27;G\w*p&#x27;匹配以G后跟零个或多个文字或数字字符，然后是p。    </span></span><br><span class="line">27.    \W      <span class="comment">#\w的反置形式，匹配一个或多个非单词字符，如点号句号等。    </span></span><br><span class="line">28.    \b      <span class="comment">#单词锁定符，如: &#x27;\bgrep\b&#x27;只匹配grep。  </span></span><br><span class="line"></span><br><span class="line">//实例：</span><br><span class="line">1.    //查找指定进程  </span><br><span class="line">2.    ps -ef | grep svn  </span><br><span class="line">3.      </span><br><span class="line">4.    //查找指定进程个数  </span><br><span class="line">5.    ps -ef | grep svn -c  </span><br><span class="line">6.      </span><br><span class="line">7.    //从文件中读取关键词  </span><br><span class="line">8.    cat test1.txt | grep -f key.log  </span><br><span class="line">9.      </span><br><span class="line">10.   //显示包含 ed 或者 at 字符的内容行  </span><br><span class="line">11.   grep -E <span class="string">&#x27;ed|at&#x27;</span> test.txt  </span><br></pre></td></tr></table></figure>
+<h4 id="1-4-Linux修改主机名的命令是什么？"><a href="#1-4-Linux修改主机名的命令是什么？" class="headerlink" title="1.4 Linux修改主机名的命令是什么？"></a>1.4 Linux修改主机名的命令是什么？</h4><ol>
+<li><p>如果只需要临时更改主机名，可以使用hostname命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo hostname &lt;new-hostname&gt;</span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line">sudo hostname myDebian <span class="comment">#myDebian为修改名</span></span><br></pre></td></tr></table></figure></li>
+<li><p>如果想永久改变主机名，可以使用hostnamectl命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hostnamectl set-hostname myDebian <span class="comment">#myDebian为修改名</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-5-Linux开机自动执行命令如何实现？"><a href="#1-5-Linux开机自动执行命令如何实现？" class="headerlink" title="1.5 Linux开机自动执行命令如何实现？"></a>1.5 Linux开机自动执行命令如何实现？</h4></li>
+<li><p><strong>方法 #1 - 使用 cron 任务</strong></p>
+<p>除了常用格式（分 / 时 / 日 / 月 / 周）外，cron 调度器还支持 @reboot 指令。这个指令后面的参数是脚本（启动时要执行的那个脚本）的绝对路径。</p>
+<p>然而，这种方法需要注意两点：</p>
+<p>a) cron 守护进程必须处于运行状态（通常情况下都会运行），同时</p>
+<p>b) 脚本或 crontab 文件必须包含需要的环境变量。</p>
+</li>
+<li><p><strong>方法 #2 - 使用 /etc/rc.d/rc.local</strong></p>
+<p>这个方法对于 systemd-based 发行版 Linux 同样有效。不过，使用这个方法，需要授予 /etc/rc.d/rc.local 文件执行权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chmod +x /etc/rc.d/rc.local</span></span><br></pre></td></tr></table></figure>
+<p>然后在这个文件底部添加脚本。</p>
+<h4 id="1-6-Linux查看内存的命令是什么？"><a href="#1-6-Linux查看内存的命令是什么？" class="headerlink" title="1.6 Linux查看内存的命令是什么？"></a>1.6 Linux查看内存的命令是什么？</h4><p><strong>查看内存使用情况的指令</strong>：<strong>free命令</strong>。“<strong>free -m</strong>”，命令查看内存使用情况。</p>
+<p>查看进程运行状态、查看内存使用情况的指令均可使用<strong>top指令</strong>。</p>
+<ol>
+<li><p><strong>free命令</strong></p>
+<p>Linux free命令用于<strong>显示内存状态</strong>。</p>
+<p>free指令会显示内存的使用情况，<strong>包括实体内存，虚拟的交换文件内存，共享内存区段，以及系统核心使用的缓冲区等。</strong></p>
+<p>参数如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-b 　以Byte为单位显示内存使用情况。</span><br><span class="line">-k 　以KB为单位显示内存使用情况。</span><br><span class="line">-m 　以MB为单位显示内存使用情况。</span><br><span class="line">-h 　以合适的单位显示内存使用情况，最大为三位数，自动计算对应的单位值。单位有：</span><br><span class="line">        B = bytes</span><br><span class="line">        K = kilos</span><br><span class="line">        M = megas</span><br><span class="line">        G = gigas</span><br><span class="line">        T = teras</span><br><span class="line">-o 　不显示缓冲区调节列。</span><br><span class="line">-s&lt;间隔秒数&gt; 　持续观察内存使用状况。</span><br><span class="line">-t 　显示内存总和列。</span><br><span class="line">-V 　显示版本信息。</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>top命令</strong></p>
+<p><strong>top</strong>命令。<strong>显示当前系统正在执行的进程的相关信息，包括进程 ID、内存占用率、CPU 占用率等</strong></p>
+<p><img src="/2021/04/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E8%AF%95/01.png" alt="01"></p>
+<p> <strong>前五行是当前系统情况整体的统计信息区。</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 第一行，任务队列信息，同 uptime 命令的执行结果，具体参数说明情况如下：</span><br><span class="line"></span><br><span class="line">   00:12:54 — 当前系统时间</span><br><span class="line"></span><br><span class="line">   up ？days, 4:49 — 系统已经运行了？天4小时49分钟（在这期间系统没有重启过）</span><br><span class="line"></span><br><span class="line">   21users — 当前有1个用户登录系统</span><br><span class="line"></span><br><span class="line">   load average: 0.06, 0.02, 0.00 — load average后面的三个数分别是1分钟、5分钟、15分钟的负载情况。load average数据是每隔5秒钟检查一次活跃的进程数，然后按特定算法计算出的数值。如果这个数除以逻辑CPU的数量，结果高于5的时候就表明系统在超负荷运转了。</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. 第二行，Tasks — 任务（进程），具体信息说明如下：</span><br><span class="line"></span><br><span class="line">   系统现在共有256个进程，其中处于运行中的有1个，177个在休眠（sleep），stoped状态的有0个，zombie状态（僵尸）的有0个。</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>. 第三行，cpu状态信息，具体属性说明如下：</span><br><span class="line"></span><br><span class="line">   0.2%us — 用户空间占用CPU的百分比。</span><br><span class="line"></span><br><span class="line">   0.2% sy — 内核空间占用CPU的百分比。</span><br><span class="line"></span><br><span class="line">   0.0% ni — 改变过优先级的进程占用CPU的百分比</span><br><span class="line"></span><br><span class="line">   99.5% id — 空闲CPU百分比</span><br><span class="line"></span><br><span class="line">   0.0% wa — IO等待占用CPU的百分比</span><br><span class="line"></span><br><span class="line">   0.0% hi — 硬中断（Hardware IRQ）占用CPU的百分比</span><br><span class="line"></span><br><span class="line">   0.0% si — 软中断（Software Interrupts）占用CPU的百分比</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>. 第四行，内存状态，具体信息如下：</span><br><span class="line"></span><br><span class="line">   2017552 total — 物理内存总量</span><br><span class="line"></span><br><span class="line">   720188 used — 使用中的内存总量</span><br><span class="line"></span><br><span class="line">   197916 free — 空闲内存总量</span><br><span class="line"></span><br><span class="line">   1099448 cached — 缓存的总量</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>. 第五行，<span class="keyword">swap</span>交换分区信息，具体信息说明如下：</span><br><span class="line"></span><br><span class="line">   998396 total — 交换区总量</span><br><span class="line"></span><br><span class="line">   989936 free — 空闲交换区总量</span><br><span class="line"></span><br><span class="line">   8460 used — 使用的交换区总量</span><br><span class="line"></span><br><span class="line">   1044136 cached — 缓冲的交换区总量</span><br></pre></td></tr></table></figure>
+<h4 id="1-7-free命令有哪些选项？"><a href="#1-7-free命令有哪些选项？" class="headerlink" title="1.7 free命令有哪些选项？"></a>1.7 free命令有哪些选项？</h4></li>
+</ol>
+<p>Linux free命令用于<strong>显示内存状态</strong>。</p>
+<p>free指令会显示内存的使用情况，包括实体内存，虚拟的交换文件内存，共享内存区段，以及系统核心使用的缓冲区等。</p>
+<p>参数如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-b 　以Byte为单位显示内存使用情况。</span><br><span class="line">-k 　以KB为单位显示内存使用情况。</span><br><span class="line">-m 　以MB为单位显示内存使用情况。</span><br><span class="line">-h 　以合适的单位显示内存使用情况，最大为三位数，自动计算对应的单位值。单位有：</span><br><span class="line">        B = bytes</span><br><span class="line">        K = kilos</span><br><span class="line">        M = megas</span><br><span class="line">        G = gigas</span><br><span class="line">        T = teras</span><br><span class="line">-o 　不显示缓冲区调节列。</span><br><span class="line">-s&lt;间隔秒数&gt; 　持续观察内存使用状况。</span><br><span class="line">-t 　显示内存总和列。</span><br><span class="line">-V 　显示版本信息。</span><br></pre></td></tr></table></figure>
+<p>实例：显示内存使用情况</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># free //显示内存使用信息</span></span><br><span class="line">total used free shared buffers cached</span><br><span class="line">Mem: 254772 184568 70204 0 5692 89892</span><br><span class="line">-/+ buffers/cache: 88984 165788</span><br><span class="line">Swap: 524280 65116 459164</span><br></pre></td></tr></table></figure>
+<h4 id="1-8-Linux中压缩文件的命令是什么？"><a href="#1-8-Linux中压缩文件的命令是什么？" class="headerlink" title="1.8 Linux中压缩文件的命令是什么？"></a>1.8 Linux中压缩文件的命令是什么？</h4><p>Linux中压缩文件与解压文件的命令有：<strong>tar命令、gz命令、bz2命令、compress命令、zip命令、unzip命令</strong>。</p>
+<ol>
+<li><p><strong>tar 命令详解</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//命令格式：</span><br><span class="line">tar [-ABcdgGhiklmMoOpPrRsStuUvwWxzZ][-b &lt;区块数目&gt;][-C &lt;目的目录&gt;][-f &lt;备份文件&gt;][-F &lt;Script文件&gt;][-K &lt;文件&gt;][-L &lt;媒体容量&gt;][-N &lt;日期时间&gt;][-T &lt;范本文件&gt;][-V &lt;卷册名称&gt;][-X &lt;范本文件&gt;][-&lt;设备编号&gt;&lt;存储密度&gt;][--after-date=&lt;日期时间&gt;][--atime-preserve][--backuup=&lt;备份方式&gt;][--checkpoint][--concatenate][--confirmation][--delete][--exclude=&lt;范本样式&gt;][--force-local][--group=&lt;群组名称&gt;][--<span class="built_in">help</span>][--ignore-failed-read][--new-volume-script=&lt;Script文件&gt;][--newer-mtime][--no-recursion][--null][--numeric-owner][--owner=&lt;用户名称&gt;][--posix][--erve][--preserve-order][--preserve-permissions][--record-size=&lt;区块数目&gt;][--recursive-unlink][--remove-files][--rsh-command=&lt;执行指令&gt;][--same-owner][--suffix=&lt;备份字尾字符串&gt;][--totals][--use-compress-program=&lt;执行指令&gt;][--version][--volno-file=&lt;编号文件&gt;][文件或目录...]</span><br><span class="line"></span><br><span class="line">//常用参数：</span><br><span class="line">//必要参数有如下：</span><br><span class="line">-A 新增压缩文件到已存在的压缩</span><br><span class="line">-c 建立新的压缩文件</span><br><span class="line">-d 记录文件的差别</span><br><span class="line">-r 添加文件到已经压缩的文件</span><br><span class="line">-u 添加改变了和现有的文件到已经存在的压缩文件</span><br><span class="line">-x 从压缩的文件中提取文件</span><br><span class="line">-t 显示压缩文件的内容</span><br><span class="line">-z 支持gzip解压文件</span><br><span class="line">-j 支持bzip2解压文件</span><br><span class="line">-Z 支持compress解压文件</span><br><span class="line">-v 显示操作过程</span><br><span class="line">-l 文件系统边界设置</span><br><span class="line">-k 保留原有文件不覆盖</span><br><span class="line">-m 保留文件不被覆盖</span><br><span class="line">-W 确认压缩文件的正确性</span><br><span class="line"></span><br><span class="line">//实例</span><br><span class="line">//1.压缩</span><br><span class="line">tar -cf hhh.tar hhh       //打包 hhh 文件为 hhh.tar</span><br><span class="line">tar -jcf hhh.tar.bz2 hhh  //压缩打包 hhh 文件为 hhh.tar.bz2</span><br><span class="line">tar -czf hhh.tar.gz hhh   //压缩 hhh 文件为 hhh.tar.gz</span><br><span class="line">tar -tzvf test.tar.gz     //列出压缩文件内容</span><br><span class="line"></span><br><span class="line">//2.解压文件  </span><br><span class="line">tar -tzvf test.tar.gz </span><br></pre></td></tr></table></figure></li>
+<li><p><strong>gz命令详解</strong></p>
+<p>Linux gzip命令用于压缩文件。</p>
+<p>gzip是个使用广泛的压缩程序，文件经它压缩过后，其名称后面会多出”.gz”的扩展名。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">//命令格式：</span><br><span class="line">gzip [-acdfhlLnNqrtvV][-S &amp;lt;压缩字尾字符串&amp;gt;][-&amp;lt;压缩效率&amp;gt;][--best/fast][文件...] 或 gzip [-acdfhlLnNqrtvV][-S &amp;lt;压缩字尾字符串&amp;gt;][-&amp;lt;压缩效率&amp;gt;][--best/fast][目录]</span><br><span class="line"></span><br><span class="line">//常用参数：</span><br><span class="line">-a或--ascii 　使用ASCII文字模式。</span><br><span class="line">-c或--stdout或--to-stdout 　把压缩后的文件输出到标准输出设备，不去更动原始文件。</span><br><span class="line">-d或--decompress或----uncompress 　解开压缩文件。</span><br><span class="line">-f或--force 　强行压缩文件。不理会文件名称或硬连接是否存在以及该文件是否为符号连接。</span><br><span class="line">-h或--<span class="built_in">help</span> 　在线帮助。</span><br><span class="line">-l或--list 　列出压缩文件的相关信息。</span><br><span class="line">-L或--license 　显示版本与版权信息。</span><br><span class="line">-n或--no-name 　压缩文件时，不保存原来的文件名称及时间戳记。</span><br><span class="line">-N或--name 　压缩文件时，保存原来的文件名称及时间戳记。</span><br><span class="line">-q或--quiet 　不显示警告信息。</span><br><span class="line">-r或--recursive 　递归处理，将指定目录下的所有文件及子目录一并处理。</span><br><span class="line">-S&lt;压缩字尾字符串&gt;或----suffix&lt;压缩字尾字符串&gt; 　更改压缩字尾字符串。</span><br><span class="line">-t或--<span class="built_in">test</span> 　测试压缩文件是否正确无误。</span><br><span class="line">-v或--verbose 　显示指令执行过程。</span><br><span class="line">-V或--version 　显示版本信息。</span><br><span class="line">-&lt;压缩效率&gt; 　压缩效率是一个介于1－9的数值，预设值为<span class="string">&quot;6&quot;</span>，指定愈大的数值，压缩效率就会愈高。</span><br><span class="line">--best 　此参数的效果和指定<span class="string">&quot;-9&quot;</span>参数相同。</span><br><span class="line">--fast 　此参数的效果和指定<span class="string">&quot;-1&quot;</span>参数相同。</span><br><span class="line"></span><br><span class="line">//实例</span><br><span class="line">//1.压缩</span><br><span class="line">gzip *            //压缩目录下的所有文件</span><br><span class="line"></span><br><span class="line">//2.解压文件  </span><br><span class="line">gzip -dv *        //解压文件，并列出详细信息   </span><br></pre></td></tr></table></figure></li>
+<li><p><strong>bz2命令详解</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//命令格式：</span><br><span class="line">bzip2 源文件       //压缩不保留源文件</span><br><span class="line">bzip2 -k 源文件    //压缩保留源文件</span><br><span class="line">//注意 bzip2 命令不能解压目录</span><br><span class="line"></span><br><span class="line">//常用参数：</span><br><span class="line">-c 将压缩与解压缩的结果送到标准输出</span><br><span class="line">-d 执行解压缩</span><br><span class="line">-f 在压缩或解压缩时，若输出文件与现有文件名相同，预设不会覆盖现有文件；使用该选项，可覆盖文件</span><br><span class="line">-k 在压缩或解压缩后，会删除原是文件；若要保留原是文件，使用该选项</span><br><span class="line">-v 压缩或解压缩文件时，显示详细的信息</span><br><span class="line">-z 强制执行压缩</span><br><span class="line"></span><br><span class="line">//实例</span><br><span class="line">//1.压缩</span><br><span class="line">bzip2 源文件       //压缩不保留源文件</span><br><span class="line">bzip2 -k 源文件    //压缩保留源文件</span><br><span class="line"></span><br><span class="line">//2.解压文件  </span><br><span class="line">bzip2 -d 源文件   //解压缩 -k 保留压缩文件</span><br><span class="line">bunzip2  源文件   //解压缩 -k 保留压缩文件      </span><br></pre></td></tr></table></figure></li>
+<li><p><strong>compress命令详解</strong></p>
+<p>Linux compress命令是一个相当古老的 unix 档案压缩指令，压缩后的档案会加上一个 .Z 延伸档名以区别未压缩的档案，压缩后的档案可以以 uncompress 解压。若要将数个档案压成一个压缩档，必须先将档案 tar 起来再压缩。由于 gzip 可以产生更理想的压缩比例，一般人多已改用 gzip 为档案压缩工具。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//命令格式：</span><br><span class="line">compress [-dfvcV] [-b maxbits] [file ...]</span><br><span class="line"></span><br><span class="line">//常用参数：    </span><br><span class="line">-c 输出结果至标准输出设备（一般指荧幕）</span><br><span class="line">-f 强迫写入档案，若目的档已经存在，则会被覆盖 (force)</span><br><span class="line">-v 将程序执行的讯息印在荧幕上 (verbose)</span><br><span class="line">-b 设定共同字串数的上限，以位元计算，可以设定的值为 9 至 16 bits 。由于值越大，能使用的共同字串就 越多，压缩比例就越大，所以一般使用预设值 16 bits (bits)</span><br><span class="line">-d 将压缩档解压缩</span><br><span class="line">-V 列出版本讯息    </span><br><span class="line"></span><br><span class="line">//实例</span><br><span class="line">//1.压缩</span><br><span class="line">compress -f source.dat   //将 source.dat 压缩成 source.dat.Z ，若 source.dat.Z 已经存在，内容则会被压缩档覆盖。    </span><br><span class="line"></span><br><span class="line">//2.解压文件  </span><br><span class="line">compress -d source.dat   //将 source.dat.Z 解压成 source.dat ，若档案已经存在，使用者按 y 以确定覆盖档案，若使用 -df 程序则会自动覆盖档案。 </span><br></pre></td></tr></table></figure></li>
+<li><p><strong>zip 命令详解</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//命令格式：</span><br><span class="line">zip [-AcdDfFghjJKlLmoqrSTuvVwXyz$][-b &lt;工作目录&gt;][-ll][-n &lt;字尾字符串&gt;][-t &lt;日期时间&gt;][-&lt;压缩效率&gt;][压缩文件][文件...][-i &lt;范本样式&gt;][-x &lt;范本样式&gt;]</span><br><span class="line"></span><br><span class="line">//常用参数：</span><br><span class="line">-m 将文件压缩并加入压缩文件后，删除原始文件，即把文件移到压缩文件中。</span><br><span class="line">-o 以压缩文件内拥有最新更改时间的文件为准，将压缩文件的更改时间设成和该文件相同。</span><br><span class="line">-q 不显示指令执行过程。</span><br><span class="line">-r 递归处理，将指定目录下的所有文件和子目录一并处理。</span><br><span class="line">-x&lt;范本样式&gt; 压缩时排除符合条件的文件。</span><br><span class="line"></span><br><span class="line">//实例：</span><br><span class="line">//将 /home/html/ 这个目录下所有文件和文件夹打包为当前目录下的 html.zip：</span><br><span class="line">zip -q -r html.zip /home/html</span><br><span class="line"></span><br><span class="line">//如果在我们在 /home/html 目录下，可以执行以下命令：</span><br><span class="line">zip -q -r html.zip *</span><br><span class="line"></span><br><span class="line">//从压缩文件 cp.zip 中删除文件 a.c</span><br><span class="line">zip -dv cp.zip a.c</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>unzip 命令详解</strong></p>
+<p>Linux unzip命令用于解压缩zip文件</p>
+<p>unzip为.zip压缩文件的解压缩程序。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//命令格式：</span><br><span class="line">unzip [-cflptuvz][-agCjLMnoqsVX][-P &lt;密码&gt;][.zip文件][文件][-d &lt;目录&gt;][-x &lt;文件&gt;] 或 unzip [-Z]</span><br><span class="line"></span><br><span class="line">//常用参数：    </span><br><span class="line">-c 将解压缩的结果显示到屏幕上，并对字符做适当的转换。</span><br><span class="line">-f 更新现有的文件。</span><br><span class="line">-l 显示压缩文件内所包含的文件。</span><br><span class="line">-p 与-c参数类似，会将解压缩的结果显示到屏幕上，但不会执行任何的转换。</span><br><span class="line">-t 检查压缩文件是否正确。</span><br><span class="line">-u 与-f参数类似，但是除了更新现有的文件外，也会将压缩文件中的其他文件解压缩到目录中。</span><br><span class="line">-v 执行是时显示详细的信息。</span><br><span class="line">-z 仅显示压缩文件的备注文字。</span><br><span class="line">-a 对文本文件进行必要的字符转换。</span><br><span class="line">-b 不要对文本文件进行字符转换。</span><br><span class="line">-C 压缩文件中的文件名称区分大小写。</span><br><span class="line">-j 不处理压缩文件中原有的目录路径。</span><br><span class="line">-L 将压缩文件中的全部文件名改为小写。</span><br><span class="line">-M 将输出结果送到more程序处理。</span><br><span class="line">-n 解压缩时不要覆盖原有的文件。</span><br><span class="line">-o 不必先询问用户，unzip执行后覆盖原有文件。</span><br><span class="line">-P&lt;密码&gt; 使用zip的密码选项。</span><br><span class="line">-q 执行时不显示任何信息。</span><br><span class="line">-s 将文件名中的空白字符转换为底线字符。</span><br><span class="line">-V 保留VMS的文件版本信息。</span><br><span class="line">-X 解压缩时同时回存文件原来的UID/GID。</span><br><span class="line">[.zip文件] 指定.zip压缩文件。</span><br><span class="line">[文件] 指定要处理.zip压缩文件中的哪些文件。</span><br><span class="line">-d&lt;目录&gt; 指定文件解压缩后所要存储的目录。</span><br><span class="line">-x&lt;文件&gt; 指定不要处理.zip压缩文件中的哪些文件。</span><br><span class="line">-Z unzip -Z等于执行zipinfo指令。</span><br><span class="line"></span><br><span class="line">//实例</span><br><span class="line">unzip text.zip   //将压缩文件text.zip在指定目录/tmp下解压缩，如果已有相同的文件存在，要求unzip命令不覆盖原先的文件。    </span><br><span class="line">unzip -n text.zip -d /tmp  //查看压缩文件目录，但不解压。</span><br></pre></td></tr></table></figure>
+<h4 id="1-9-Linux查询连接数的命令是什么？"><a href="#1-9-Linux查询连接数的命令是什么？" class="headerlink" title="1.9 Linux查询连接数的命令是什么？"></a>1.9 Linux查询连接数的命令是什么？</h4></li>
+<li><p><strong>netstat</strong></p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">//示例</span><br><span class="line">查看Web服务器（Nginx Apache）的并发请求数及其TCP连接状态：</span><br><span class="line">netstat -n | awk <span class="string">&#x27;/^tcp/ &#123;++S[$NF]&#125; END &#123;for(a in S) print a, S[a]&#125;&#x27;</span></span><br><span class="line"></span><br><span class="line">解释:</span><br><span class="line">返回结果示例： </span><br><span class="line">LAST_ACK 5   (正在等待处理的请求数) </span><br><span class="line">SYN_RECV 30 </span><br><span class="line">ESTABLISHED 1597 (正常数据传输状态) </span><br><span class="line">FIN_WAIT1 51 </span><br><span class="line">FIN_WAIT2 504 </span><br><span class="line">TIME_WAIT 1057 (处理完毕，等待超时结束的请求数) </span><br><span class="line"></span><br><span class="line">状态：描述 </span><br><span class="line">CLOSED：无连接是活动的或正在进行 </span><br><span class="line">LISTEN：服务器在等待进入呼叫 </span><br><span class="line">SYN_RECV：一个连接请求已经到达，等待确认 </span><br><span class="line">SYN_SENT：应用已经开始，打开一个连接 </span><br><span class="line">ESTABLISHED：正常数据传输状态 </span><br><span class="line">FIN_WAIT1：应用说它已经完成 </span><br><span class="line">FIN_WAIT2：另一边已同意释放 </span><br><span class="line">ITMED_WAIT：等待所有分组死掉 </span><br><span class="line">CLOSING：两边同时尝试关闭 </span><br><span class="line">TIME_WAIT：另一边已初始化一个释放 </span><br><span class="line">LAST_ACK：等待所有分组死掉</span><br></pre></td></tr></table></figure>
+<h4 id="1-10-Linux中top命令有哪些参数？"><a href="#1-10-Linux中top命令有哪些参数？" class="headerlink" title="1.10 Linux中top命令有哪些参数？"></a>1.10 Linux中top命令有哪些参数？</h4><p><strong>top</strong>命令。显示当前系统正在执行的进程的相关信息，包括进程 ID、内存占用率、CPU 占用率等。</p>
+<p><strong>参数</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-d 指定每两次屏幕信息刷新之间的时间间隔。当然用户可以使用s交互命令来改变之。 </span><br><span class="line">-p 通过指定监控进程ID来仅仅监控某个进程的状态。 </span><br><span class="line">-q 该选项将使top没有任何延迟的进行刷新。如果调用程序有超级用户权限，那么top将以尽可能高的优先级运行。 </span><br><span class="line">-S 指定累计模式 </span><br><span class="line">-s 使top命令在安全模式中运行。这将去除交互命令所带来的潜在危险。 </span><br><span class="line">-i 使top不显示任何闲置或者僵死进程。 </span><br><span class="line">-c 显示整个命令行而不只是显示命令名 </span><br></pre></td></tr></table></figure>
+<p><img src="/2021/04/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E8%AF%95/02.png" alt="02"></p>
+<p> <strong>前五行是当前系统情况整体的统计信息区。</strong></p>
+<ol>
+<li><p>第一行，任务队列信息，同 uptime 命令的执行结果，具体参数说明情况如下：</p>
+<p>00:12:54 — 当前系统时间</p>
+<p>up ？days, 4:49 — 系统已经运行了？天4小时49分钟（在这期间系统没有重启过）</p>
+<p>21users — 当前有1个用户登录系统</p>
+<p>load average: 0.06, 0.02, 0.00 — load average后面的三个数分别是1分钟、5分钟、15分钟的负载情况。load average数据是每隔5秒钟检查一次活跃的进程数，然后按特定算法计算出的数值。如果这个数除以逻辑CPU的数量，结果高于5的时候就表明系统在超负荷运转了。</p>
+</li>
+<li><p>第二行，Tasks — 任务（进程），具体信息说明如下：</p>
+<p>系统现在共有256个进程，其中处于运行中的有1个，177个在休眠（sleep），stoped状态的有0个，zombie状态（僵尸）的有0个。</p>
+</li>
+<li><p>第三行，cpu状态信息，具体属性说明如下：</p>
+<p>0.2%us — 用户空间占用CPU的百分比。</p>
+<p>0.2% sy — 内核空间占用CPU的百分比。</p>
+<p>0.0% ni — 改变过优先级的进程占用CPU的百分比</p>
+<p>99.5% id — 空闲CPU百分比</p>
+<p>0.0% wa — IO等待占用CPU的百分比</p>
+<p>0.0% hi — 硬中断（Hardware IRQ）占用CPU的百分比</p>
+<p>0.0% si — 软中断（Software Interrupts）占用CPU的百分比</p>
+</li>
+<li><p>第四行，内存状态，具体信息如下：</p>
+<p>2017552 total — 物理内存总量</p>
+<p>720188 used — 使用中的内存总量</p>
+<p>197916 free — 空闲内存总量</p>
+<p>1099448 cached — 缓存的总量</p>
+</li>
+<li><p>第五行，swap交换分区信息，具体信息说明如下：</p>
+<p>998396 total — 交换区总量</p>
+<p>989936 free — 空闲交换区总量</p>
+<p>8460 used — 使用的交换区总量</p>
+<p>1044136 cached — 缓冲的交换区总量</p>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="1-11-Linux中，如何通过端口查进程，如何通过进程查端口？"><a href="#1-11-Linux中，如何通过端口查进程，如何通过进程查端口？" class="headerlink" title="1.11 Linux中，如何通过端口查进程，如何通过进程查端口？"></a>1.11 Linux中，如何通过端口查进程，如何通过进程查端口？</h4><ol>
+<li><p><strong>linux下通过进程名查看其占用端口</strong>：<br>（1）先查看进程pid</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep 进程名</span><br></pre></td></tr></table></figure>
+<p>（2）通过pid查看占用端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nap | grep 进程pid</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>linux通过端口查看进程</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -nap | grep 端口号</span><br></pre></td></tr></table></figure>
+<h4 id="1-12-请你说说ping命令？"><a href="#1-12-请你说说ping命令？" class="headerlink" title="1.12 请你说说ping命令？"></a>1.12 请你说说ping命令？</h4></li>
+</ol>
+<p>Linux ping命令用于检测主机。</p>
+<p><strong>执行ping指令会使用ICMP传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应该信息，因而得知该主机运作正常。</strong></p>
+<p>语法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping [-dfnqrRv][-c&lt;完成次数&gt;][-i&lt;间隔秒数&gt;][-I&lt;网络界面&gt;][-l&lt;前置载入&gt;][-p&lt;范本样式&gt;][-s&lt;数据包大小&gt;][-t&lt;存活数值&gt;][主机名称或IP地址]</span><br></pre></td></tr></table></figure>
+<p>参数说明：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-d 使用Socket的SO_DEBUG功能。</span><br><span class="line">-c&lt;完成次数&gt; 设置完成要求回应的次数。</span><br><span class="line">-f 极限检测。</span><br><span class="line">-i&lt;间隔秒数&gt; 指定收发信息的间隔时间。</span><br><span class="line">-I&lt;网络界面&gt; 使用指定的网络接口送出数据包。</span><br><span class="line">-l&lt;前置载入&gt; 设置在送出要求信息之前，先行发出的数据包。</span><br><span class="line">-n 只输出数值。</span><br><span class="line">-p&lt;范本样式&gt; 设置填满数据包的范本样式。</span><br><span class="line">-q 不显示指令执行过程，开头和结尾的相关信息除外。</span><br><span class="line">-r 忽略普通的Routing Table，直接将数据包送到远端主机上。</span><br><span class="line">-R 记录路由过程。</span><br><span class="line">-s&lt;数据包大小&gt; 设置数据包的大小。</span><br><span class="line">-t&lt;存活数值&gt; 设置存活数值TTL的大小。</span><br><span class="line">-v 详细显示指令的执行过程。</span><br></pre></td></tr></table></figure>
+<p>实例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">检测是否与主机连通</span><br><span class="line"></span><br><span class="line"><span class="comment"># ping www.w3cschool.cc //ping主机</span></span><br><span class="line">PING aries.m.alikunlun.com (114.80.174.110) 56(84) bytes of data.</span><br><span class="line">64 bytes from 114.80.174.110: icmp_seq=1 ttl=64 time=0.025 ms</span><br><span class="line">64 bytes from 114.80.174.110: icmp_seq=2 ttl=64 time=0.036 ms</span><br><span class="line">64 bytes from 114.80.174.110: icmp_seq=3 ttl=64 time=0.034 ms</span><br><span class="line">64 bytes from 114.80.174.110: icmp_seq=4 ttl=64 time=0.034 ms</span><br><span class="line">64 bytes from 114.80.174.110: icmp_seq=5 ttl=64 time=0.028 ms</span><br><span class="line">64 bytes from 114.80.174.110: icmp_seq=6 ttl=64 time=0.028 ms</span><br><span class="line">64 bytes from 114.80.174.110: icmp_seq=7 ttl=64 time=0.034 ms</span><br><span class="line">64 bytes from 114.80.174.110: icmp_seq=8 ttl=64 time=0.034 ms</span><br><span class="line">64 bytes from 114.80.174.110: icmp_seq=9 ttl=64 time=0.036 ms</span><br><span class="line">64 bytes from 114.80.174.110: icmp_seq=10 ttl=64 time=0.041 ms</span><br><span class="line"></span><br><span class="line">--- aries.m.alikunlun.com ping statistics ---</span><br><span class="line">10 packets transmitted, 30 received, 0% packet loss, time 29246ms</span><br><span class="line">rtt min/avg/max/mdev = 0.021/0.035/0.078/0.011 ms</span><br><span class="line"></span><br><span class="line">//需要手动终止Ctrl+C</span><br><span class="line">指定接收包的次数</span><br><span class="line"></span><br><span class="line"><span class="comment"># ping -c 2 www.w3cschool.cc</span></span><br><span class="line">PING aries.m.alikunlun.com (114.80.174.120) 56(84) bytes of data.</span><br><span class="line">64 bytes from 114.80.174.120: icmp_seq=1 ttl=54 time=6.18 ms</span><br><span class="line">64 bytes from 114.80.174.120: icmp_seq=2 ttl=54 time=15.4 ms</span><br><span class="line"></span><br><span class="line">--- aries.m.alikunlun.com ping statistics ---</span><br><span class="line">2 packets transmitted, 2 received, 0% packet loss, time 1016ms</span><br><span class="line">rtt min/avg/max/mdev = 6.185/10.824/15.464/4.640 ms</span><br><span class="line"></span><br><span class="line">//收到两次包后，自动退出</span><br><span class="line">多参数使用</span><br><span class="line"></span><br><span class="line"><span class="comment"># ping -i 3 -s 1024 -t 255 g.cn //ping主机</span></span><br><span class="line">PING g.cn (203.208.37.104) 1024(1052) bytes of data.</span><br><span class="line">1032 bytes from bg-in-f104.1e100.net (203.208.37.104): icmp_seq=0 ttl=243 time=62.5 ms</span><br><span class="line">1032 bytes from bg-in-f104.1e100.net (203.208.37.104): icmp_seq=1 ttl=243 time=63.9 ms</span><br><span class="line">1032 bytes from bg-in-f104.1e100.net (203.208.37.104): icmp_seq=2 ttl=243 time=61.9 ms</span><br><span class="line"></span><br><span class="line">--- g.cn ping statistics ---</span><br><span class="line">3 packets transmitted, 3 received, 0% packet loss, time 6001ms</span><br><span class="line">rtt min/avg/max/mdev = 61.959/62.843/63.984/0.894 ms, pipe 2</span><br><span class="line">[root@linux ~]<span class="comment"># </span></span><br><span class="line"></span><br><span class="line">//-i 3 发送周期为 3秒 -s 设置发送包的大小 -t 设置TTL值为 255</span><br></pre></td></tr></table></figure>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/04/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%9D%A2%E8%AF%95/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java基础问题（六）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/04/17/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%AD%EF%BC%89/" target="_blank">Java基础问题（六）</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/04/17/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%AD%EF%BC%89/" class="archive-article-date">
+        <time datetime="2021-04-17T07:55:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-17</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="声明：本文仅用于个人学习和研究使用！"><a href="#声明：本文仅用于个人学习和研究使用！" class="headerlink" title="声明：本文仅用于个人学习和研究使用！"></a>声明：本文仅用于个人学习和研究使用！</h3>
+    
+    <a class="article-more-a" href="/2021/04/17/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%AD%EF%BC%89/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">常见问题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面试问题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/04/17/Java%E5%9F%BA%E7%A1%80%E9%97%AE%E9%A2%98%EF%BC%88%E5%85%AD%EF%BC%89/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Spring面试问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -899,198 +1205,6 @@
 
 
   
-    <article id="post-struts2框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/03/12/struts2%E6%A1%86%E6%9E%B6/" target="_blank">快速排序算法思想及其代码实现</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/03/12/struts2%E6%A1%86%E6%9E%B6/" class="archive-article-date">
-        <time datetime="2021-03-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-12</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h4 id="声明：本文仅供个人学习研究使用！"><a href="#声明：本文仅供个人学习研究使用！" class="headerlink" title="声明：本文仅供个人学习研究使用！"></a>声明：本文仅供个人学习研究使用！</h4><h2 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h2><h3 id="1-Struts2框架的综述"><a href="#1-Struts2框架的综述" class="headerlink" title="1. Struts2框架的综述"></a>1. Struts2框架的综述</h3><h3 id="2-Java-web开发中Struts2的使用"><a href="#2-Java-web开发中Struts2的使用" class="headerlink" title="2. Java web开发中Struts2的使用"></a>2. Java web开发中Struts2的使用</h3>
-    
-    <a class="article-more-a" href="/2021/03/12/struts2%E6%A1%86%E6%9E%B6/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Java web开发</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Struts2</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/03/12/struts2%E6%A1%86%E6%9E%B6/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-区块链的图灵完备" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2021/01/03/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/" target="_blank">区块链是图灵完备的？</a>
-  
-    </h1>
-  
-
-
-  
-  
-<a href="/2021/01/03/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/" class="archive-article-date">
-        <time datetime="2021-01-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-03</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><h3 id="图灵、图灵机、图灵完备。"><a href="#图灵、图灵机、图灵完备。" class="headerlink" title="图灵、图灵机、图灵完备。"></a>图灵、图灵机、图灵完备。</h3>
-    
-    <a class="article-more-a" href="/2021/01/03/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图灵完备</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2021/01/03/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E5%9B%BE%E7%81%B5%E5%AE%8C%E5%A4%87/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1305,6 +1419,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MySQL面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面试问题</a>
               </li>
             
             <div class="clearfix"></div>
