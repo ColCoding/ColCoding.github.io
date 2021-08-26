@@ -10,18 +10,18 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="项目面试可能问到的问题 请简要概括一下你的项目？这个项目整体结构来源于牛客网，主要使用了Springboot、Mybatis、Mysql、Redis、Kafka、Elasticsearch等工具。实现了用户的注册、登录、发帖、评论、点赞、系统通知、按热度排行、搜索等功能。另外引入了Redis数据库来提升网站的整体性能，实现用户凭证的存取，点赞关注的功能。基于Kadka实现系统通知，当用户收到点赞、">
+  <meta name="description" content="项目面试可能问到的问题声明：本文仅用于个人的学习和研究！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ColCoding小站">
 <meta property="og:url" content="http://example.com/2021/08/13/Community%E9%A1%B9%E7%9B%AE%E9%9D%A2%E8%AF%95%E5%8F%AF%E8%83%BD%E9%97%AE%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="ColCoding小站">
-<meta property="og:description" content="项目面试可能问到的问题 请简要概括一下你的项目？这个项目整体结构来源于牛客网，主要使用了Springboot、Mybatis、Mysql、Redis、Kafka、Elasticsearch等工具。实现了用户的注册、登录、发帖、评论、点赞、系统通知、按热度排行、搜索等功能。另外引入了Redis数据库来提升网站的整体性能，实现用户凭证的存取，点赞关注的功能。基于Kadka实现系统通知，当用户收到点赞、">
+<meta property="og:description" content="项目面试可能问到的问题声明：本文仅用于个人的学习和研究！">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2021/08/13/Community%E9%A1%B9%E7%9B%AE%E9%9D%A2%E8%AF%95%E5%8F%AF%E8%83%BD%E9%97%AE%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/Users/niyun/AppData/Roaming/Typora/typora-user-images/image-20210623164509245.png">
 <meta property="og:image" content="https://i0.hdslb.com/bfs/article/854251c5b475fda6bf08cf47857c3038a0542e16.jpg@942w_642h_progressive.webp">
 <meta property="og:image" content="http://example.com/2021/08/13/Community%E9%A1%B9%E7%9B%AE%E9%9D%A2%E8%AF%95%E5%8F%AF%E8%83%BD%E9%97%AE%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/Users/niyun/AppData/Roaming/Typora/typora-user-images/image-20210624111843413.png">
 <meta property="article:published_time" content="2021-08-13T06:59:17.694Z">
-<meta property="article:modified_time" content="2021-08-14T03:21:10.173Z">
+<meta property="article:modified_time" content="2021-08-26T02:53:33.071Z">
 <meta property="article:author" content="ColCoding">
 <meta property="article:tag" content="ColCoding，ColCoding的博客，ColCoding的小站">
 <meta name="twitter:card" content="summary">
@@ -196,7 +196,9 @@
     
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="项目面试可能问到的问题"><a href="#项目面试可能问到的问题" class="headerlink" title="项目面试可能问到的问题"></a>项目面试可能问到的问题</h1><ol>
+    <h1 id="项目面试可能问到的问题"><a href="#项目面试可能问到的问题" class="headerlink" title="项目面试可能问到的问题"></a>项目面试可能问到的问题</h1><h3 id="声明：本文仅用于个人的学习和研究！"><a href="#声明：本文仅用于个人的学习和研究！" class="headerlink" title="声明：本文仅用于个人的学习和研究！"></a>声明：本文仅用于个人的学习和研究！</h3><a id="more"></a>
+
+<ol>
 <li><p>请简要概括一下你的项目？<br>这个项目整体结构来源于牛客网，主要使用了Springboot、Mybatis、Mysql、Redis、Kafka、Elasticsearch等工具。实现了用户的注册、登录、发帖、评论、点赞、系统通知、按热度排行、搜索等功能。另外引入了Redis数据库来提升网站的整体性能，实现用户凭证的存取，点赞关注的功能。基于Kadka实现系统通知，当用户收到点赞、评论后收到系统发来的通知。利用定时任务定期计算帖子的分数，并在页面上展示热帖排行榜。</p>
 </li>
 <li><p>什么是Spring框架？</p>
@@ -240,7 +242,7 @@
 <p>每一次请求都是先开发数据访问层，在开发业务层，最后开发视图层（三层架构），但是每一次请求不一定要用到这三层</p>
 </li>
 <li><p>什么是Interceptor，在项目的哪里使用到了Interceptor?</p>
-<p> java里的拦截器是动态拦截Action调用的对象，它提供了一种机制可以使开发者在一个Action执行的前后执行一段代码</p>
+<p>java里的拦截器是动态拦截Action调用的对象，它提供了一种机制可以使开发者在一个Action执行的前后执行一段代码</p>
 <ul>
 <li>interceptor基于JAVA反射原理实现</li>
 <li>interceptor 不依赖于servlet容器，Filter依赖servlet容器</li>
@@ -257,44 +259,44 @@
 <p>加拦截器注解</p>
 </li>
 <li><p>如何实现敏感词过滤？</p>
-<p>使用前缀树（字典树）存储敏感词，对text中敏感词实现替换</p>
+<p> 使用前缀树（字典树）存储敏感词，对text中敏感词实现替换</p>
 </li>
 <li><p>什么是Ajax？应用在项目哪些地方？</p>
-<p><strong>A</strong>synchronous <strong>J</strong>avascript <strong>A</strong>nd <strong>X</strong>ML，是一个不需要刷新整个页面而只需要局部刷新的技术。</p>
-<p>项目中：add帖子用到。</p>
+<p> <strong>A</strong>synchronous <strong>J</strong>avascript <strong>A</strong>nd <strong>X</strong>ML，是一个不需要刷新整个页面而只需要局部刷新的技术。</p>
+<p> 项目中：add帖子用到。</p>
 </li>
 <li><p>什么是事务？事务的4大特性？</p>
-<p>定义：事务是逻辑上的一组操作，要么都执行，要么都不执行。</p>
-<p>ACID:原子性、一致性、隔离性、持久性</p>
-<p>A：原子性。是最小的执行单位，不允许被分割，事务的全部操作要么全部提交成功，要么全部失败回滚。</p>
-<p>C：一致性。数据库在事务执行前后保持一致性状态。</p>
-<p> I：隔离性。一个事务所做的修改在最终提交前，对其他事务是不可见的，避免多个事务交叉执行导致数据不一致的问题。</p>
-<p>D：持久性。一旦事务提交，所做的修改将永远保存到数据库中</p>
+<p> 定义：事务是逻辑上的一组操作，要么都执行，要么都不执行。</p>
+<p> ACID:原子性、一致性、隔离性、持久性</p>
+<p> A：原子性。是最小的执行单位，不允许被分割，事务的全部操作要么全部提交成功，要么全部失败回滚。</p>
+<p> C：一致性。数据库在事务执行前后保持一致性状态。</p>
+<p>  I：隔离性。一个事务所做的修改在最终提交前，对其他事务是不可见的，避免多个事务交叉执行导致数据不一致的问题。</p>
+<p> D：持久性。一旦事务提交，所做的修改将永远保存到数据库中</p>
 </li>
 <li><p>怎么利用Spring实现事务管理？</p>
-<p>通过@Transactional注解实现，比如在增加评论的时候，同时要增加评论的个数，在CommentService里面的addComment方法上添加@Transactional注解，声明事务隔离级别以及传播机制，我用的是分别是READ_COMMITTED和REQUIRED</p>
-<p>在 Spring 项目中，我们可以用通过四种方式实现事务管理，分别是 编程式事务管理、基于 TransactionProxyFactoryBean的声明式事务管理、基于 @Transactional 的声明式事务管理 和 基于Aspectj AOP配置事务。</p>
+<p> 通过@Transactional注解实现，比如在增加评论的时候，同时要增加评论的个数，在CommentService里面的addComment方法上添加@Transactional注解，声明事务隔离级别以及传播机制，我用的是分别是READ_COMMITTED和REQUIRED</p>
+<p> 在 Spring 项目中，我们可以用通过四种方式实现事务管理，分别是 编程式事务管理、基于 TransactionProxyFactoryBean的声明式事务管理、基于 @Transactional 的声明式事务管理 和 基于Aspectj AOP配置事务。</p>
 </li>
 <li><p>是怎样实现统一捕获异常的？</p>
-<p>创建异常处理类用@ControllerAdvice修饰加上参数(annotations=Controller.class)表明扫描带Controller注解的bean，在方法上加@ExceptionHandler({Exception.class})表明该方法在controller出现异常后调用。</p>
-<p>为了区分异步请求还是同步请求，通过获取请求头的x-requested-with是否为XMLHttpRequest判断，true==&gt;就是一个异步请求。</p>
+<p> 创建异常处理类用@ControllerAdvice修饰加上参数(annotations=Controller.class)表明扫描带Controller注解的bean，在方法上加@ExceptionHandler({Exception.class})表明该方法在controller出现异常后调用。</p>
+<p> 为了区分异步请求还是同步请求，通过获取请求头的x-requested-with是否为XMLHttpRequest判断，true==&gt;就是一个异步请求。</p>
 </li>
 <li><p>是怎样实现统一记录日志的？</p>
-<p>统一记录日志主要通过aop编程的方式</p>
-<p>具体的实现方式通过声明一个组件用@Aspect修饰；首先定义切点，写一个pointcut方法用@Pointcut修饰，通过设置里面的execution表达式，表明在哪些包下的哪些类的哪些方法切入；其次，在具体的方法上添加@Before或者其他@After等，我这里用了@Before，通过注解@Before(“pointcut()”也就是切点)，方法传入对象JointPoint，通过JointPoint对象获取目标信息，比如是在哪个类的哪个方法上。</p>
+<p> 统一记录日志主要通过aop编程的方式</p>
+<p> 具体的实现方式通过声明一个组件用@Aspect修饰；首先定义切点，写一个pointcut方法用@Pointcut修饰，通过设置里面的execution表达式，表明在哪些包下的哪些类的哪些方法切入；其次，在具体的方法上添加@Before或者其他@After等，我这里用了@Before，通过注解@Before(“pointcut()”也就是切点)，方法传入对象JointPoint，通过JointPoint对象获取目标信息，比如是在哪个类的哪个方法上。</p>
 </li>
-<li><p>什么是Redis？Redis有哪些优点？<br>Redis是非关系型数据库，数据存储在内存中，读写速度很快。可以存储键和5种不同类型值的映射。只能以字符串为键，值支持字符串、列表、无序集合、有序集合、hash散列表。</p>
-<p>优点：由于数据存储在内存中，读写速度非常快，满足高性能，高并发的系统要求。</p>
+<li><p>什么是Redis？Redis有哪些优点？<br> Redis是非关系型数据库，数据存储在内存中，读写速度很快。可以存储键和5种不同类型值的映射。只能以字符串为键，值支持字符串、列表、无序集合、有序集合、hash散列表。</p>
+<p> 优点：由于数据存储在内存中，读写速度非常快，满足高性能，高并发的系统要求。</p>
 </li>
 <li><p>Redis分布式集群架构？</p>
-<p><img src="/2021/08/13/Community%E9%A1%B9%E7%9B%AE%E9%9D%A2%E8%AF%95%E5%8F%AF%E8%83%BD%E9%97%AE%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/Users\niyun\AppData\Roaming\Typora\typora-user-images\image-20210623164509245.png" alt="image-20210623164509245"></p>
-<p>​                                                                        </p>
-<p>​                                                            redis-cluster（redis-集群）架构图<br>简单说明：从redis 3.0之后版本支持redis-cluster集群，Redis-Cluster采用无中心结构，每个节点保存数据和整个集群状态,每个节点都和其他所有节点连接。</p>
-<p>特点：<br>1、无中心架构（不存在哪个节点影响性能瓶颈），少了 proxy 层。<br>2、数据按照 slot 存储分布在多个节点，节点间数据共享，可动态调整数据分布。<br>3、可扩展性，可线性扩展到 1000 个节点，节点可动态添加或删除。<br>4、高可用性，部分节点不可用时，集群仍可用。通过增加 Slave 做备份数据副本<br>5、实现故障自动 failover，节点之间通过 gossip 协议交换状态信息，用投票机制完成 Slave到 Master 的角色提升。<br>缺点：<br>1、资源隔离性较差，容易出现相互影响的情况。<br>2、数据通过异步复制,不保证数据的强一致性。</p>
+<p> <img src="/2021/08/13/Community%E9%A1%B9%E7%9B%AE%E9%9D%A2%E8%AF%95%E5%8F%AF%E8%83%BD%E9%97%AE%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/Users\niyun\AppData\Roaming\Typora\typora-user-images\image-20210623164509245.png" alt="image-20210623164509245"></p>
+<p> ​                                                                        </p>
+<p> ​                                                            redis-cluster（redis-集群）架构图<br> 简单说明：从redis 3.0之后版本支持redis-cluster集群，Redis-Cluster采用无中心结构，每个节点保存数据和整个集群状态,每个节点都和其他所有节点连接。</p>
+<p> 特点：<br> 1、无中心架构（不存在哪个节点影响性能瓶颈），少了 proxy 层。<br> 2、数据按照 slot 存储分布在多个节点，节点间数据共享，可动态调整数据分布。<br> 3、可扩展性，可线性扩展到 1000 个节点，节点可动态添加或删除。<br> 4、高可用性，部分节点不可用时，集群仍可用。通过增加 Slave 做备份数据副本<br> 5、实现故障自动 failover，节点之间通过 gossip 协议交换状态信息，用投票机制完成 Slave到 Master 的角色提升。<br> 缺点：<br> 1、资源隔离性较差，容易出现相互影响的情况。<br> 2、数据通过异步复制,不保证数据的强一致性。</p>
 </li>
 <li><p>怎么往Spring框架中配置Redis，介绍常见的Redis操作？</p>
-<p>首先引入redis依赖spring-boot-starter-data-redis，其次编写配置类，构造RedisTemplate，在application.properties中需要设置redis库，主机以及端口号，在配置类中主要通过RedisConnectionFactory数据库连接工厂将我们创建的RedisTemplate实例和redis连接，然后我们需要设置key和value的序列化方法，以及hash类型的key、value序列化方式。</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33762302/article/details/114274756">常见redis操作</a></p>
+<p> 首先引入redis依赖spring-boot-starter-data-redis，其次编写配置类，构造RedisTemplate，在application.properties中需要设置redis库，主机以及端口号，在配置类中主要通过RedisConnectionFactory数据库连接工厂将我们创建的RedisTemplate实例和redis连接，然后我们需要设置key和value的序列化方法，以及hash类型的key、value序列化方式。</p>
+<p> <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33762302/article/details/114274756">常见redis操作</a></p>
 <ul>
 <li><p>Value类型：redisTemplate.opsForValue().set(redisKey,1)</p>
 <pre><code>                 redisTemplate.opsForValue().get(redisKey)
@@ -309,9 +311,9 @@
 <li><p>Set   类型： redisTemplate.opsForSet().add(redisKey,1) ，add，size，pop，members等操作</p>
 </li>
 <li><p>Zset 类型： redisTemplate.opsForZSet().add(redisKey,”Linda”,92)，有score，rank，reverseRank，range等操作</p>
+<p>操作key：可以delete，以及设置过期时间</p>
 </li>
 </ul>
-<p>操作key：可以delete，以及设置过期时间</p>
 </li>
 <li><p>项目中Redis的作用？</p>
 <ul>
@@ -331,7 +333,7 @@
 </li>
 </ul>
 </li>
-<li><p>怎样存储的点赞/关注/缓存用户数据？<br>点赞使用Set类型存储，key为点赞对象，set中保存点赞人数的ID（点赞是先判断是否点过赞 ，没有再执行add用户id操作，同时增加1，这里用到了redis事务，一定要把查询放在外面；）</p>
+<li><p>怎样存储的点赞/关注/缓存用户数据？<br> 点赞使用Set类型存储，key为点赞对象，set中保存点赞人数的ID（点赞是先判断是否点过赞 ，没有再执行add用户id操作，同时增加1，这里用到了redis事务，一定要把查询放在外面；）</p>
 </li>
 </ol>
 <p>点赞服务层代码：</p>
@@ -827,15 +829,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面经</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MySQL面试问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,6 +838,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">计算机网络面试问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">秋招面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">设计模式面试题</a>
               </li>
             
             <div class="clearfix"></div>
