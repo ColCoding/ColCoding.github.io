@@ -19,9 +19,9 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2021/06/22/SpringMVC%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/springmvc-2.png">
 <meta property="article:published_time" content="2021-06-22T12:56:42.000Z">
-<meta property="article:modified_time" content="2021-06-25T08:11:04.072Z">
+<meta property="article:modified_time" content="2021-09-10T16:01:35.666Z">
 <meta property="article:author" content="ColCoding">
-<meta property="article:tag" content="Spring面试问题">
+<meta property="article:tag" content="Spring　MVC面试问题">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2021/06/22/SpringMVC%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/springmvc-2.png">
   
@@ -250,12 +250,14 @@
 <li>整个过程开始于客户端发出的一个HTTP请求，Web应用服务器接收到这个请求。如果匹配DispatcherServlet的请求映射路径，则Web容器将该请求转交给DispatcherServlet处理。</li>
 <li>DispatcherServlet接收到这个请求后，将根据请求的信息（包括URL、HTTP方法、请求报文头、请求参数、Cookie等）及HandlerMapping的配置找到处理请求的处理器（Handler）。可将HandlerMapping看做路由控制器，将Handler看做目标主机。值得注意的是，在Spring MVC中并没有定义一个Handler接口，实际上任何一个Object都可以成为请求处理器。</li>
 <li>当DispatcherServlet根据HandlerMapping得到对应当前请求的Handler后，通过HandlerAdapter对Handler进行封装，再以统一的适配器接口调用Handler。HandlerAdapter是Spring MVC框架级接口，顾名思义，HandlerAdapter是一个适配器，它用统一的接口对各种Handler方法进行调用。</li>
-<li>处理器完成业务逻 辑的处理后，将返回一个ModelAndView给DispatcherServlet，ModelAndView包含了视图逻辑名和模型数据信息。</li>
+<li>处理器完成业务逻辑的处理后，将返回一个ModelAndView给DispatcherServlet，ModelAndView包含了视图逻辑名和模型数据信息。</li>
 <li>ModelAndView中包含的是“逻辑视图名”而非真正的视图对象，DispatcherServlet借由ViewResolver完成逻辑视图名到真实视图对象的解析工作。</li>
 <li>当得到真实的视图对象View后，DispatcherServlet就使用这个View对象对ModelAndView中的模型数据进行视图渲染。</li>
 <li>最终客户端得到的响应消息可能是一个普通的HTML页面，也可能是一个XML或JSON串，甚至是一张图片或一个PDF文档等不同的媒体形式。</li>
 </ol>
-<h4 id="3-4-说一说你知道的Spring-MVC注解"><a href="#3-4-说一说你知道的Spring-MVC注解" class="headerlink" title="3.4 说一说你知道的Spring MVC注解"></a>3.4 说一说你知道的Spring MVC注解</h4><p>@RequestMapping：</p>
+<h4 id="3-4-说一说你知道的Spring-MVC注解"><a href="#3-4-说一说你知道的Spring-MVC注解" class="headerlink" title="3.4 说一说你知道的Spring MVC注解"></a>3.4 说一说你知道的Spring MVC注解</h4><blockquote>
+<p>@RequestMapping：</p>
+</blockquote>
 <p>作用：该注解的作用就是用来处理请求地址映射的，也就是说将其中的处理器方法映射到url路径上。</p>
 <p>属性：</p>
 <ul>
@@ -266,17 +268,23 @@
 <li>headers：指定request中必须包含那些的headed值时，它才会用该方法处理请求的。</li>
 <li>params：指定request中一定要有的参数值，它才会使用该方法处理请求。</li>
 </ul>
+<blockquote>
 <p>@RequestParam：</p>
+</blockquote>
 <p>作用：是将请求参数绑定到你的控制器的方法参数上，是Spring MVC中的接收普通参数的注解。</p>
 <p>属性：</p>
 <ul>
 <li>value是请求参数中的名称。</li>
 <li>required是请求参数是否必须提供参数，它的默认是true，意思是表示必须提供。</li>
 </ul>
+<blockquote>
 <p>@RequestBody：</p>
+</blockquote>
 <p>作用：如果作用在方法上，就表示该方法的返回结果是直接按写入的Http responsebody中（一般在异步获取数据时使用的注解）。</p>
 <p>属性：required，是否必须有请求体。它的默认值是true，在使用该注解时，值得注意的当为true时get的请求方式是报错的，如果你取值为false的话，get的请求是null。</p>
+<blockquote>
 <p>@PathVaribale：</p>
+</blockquote>
 <p>作用：该注解是用于绑定url中的占位符，但是注意，spring3.0以后，url才开始支持占位符的，它是Spring MVC支持的rest风格url的一个重要的标志。</p>
 <h4 id="3-5-介绍一下Spring-MVC的拦截器"><a href="#3-5-介绍一下Spring-MVC的拦截器" class="headerlink" title="3.5 介绍一下Spring MVC的拦截器"></a>3.5 介绍一下Spring MVC的拦截器</h4><p>拦截器会对处理器进行拦截，这样通过拦截器就可以增强处理器的功能。Spring MVC中，所有的拦截器都需要实现HandlerInterceptor接口，该接口包含如下三个方法：preHandle()、postHandle()、afterCompletion()。</p>
 <p>这些方法的执行流程如下图：</p>
@@ -369,7 +377,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spring面试问题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Spring　MVC面试问题</a>
         		</li>
       		
 		</ul>
@@ -697,15 +705,31 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">计算机网络面试问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">秋招面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">设计模式面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Spring　MVC面试问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">搜索引擎</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">算法面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
               </li>
             
             <div class="clearfix"></div>
